@@ -1,0 +1,95 @@
+@import '_vars.scss';
+
+:root {
+  box-sizing: border-box;
+}
+
+*::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  color: $grey;
+  font-size: 16px;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  //width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: $green;
+  color: #fff;
+  border: 2px solid $green;
+  padding: 16px 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    color: $green;
+  }
+}
+
+.button--white {
+  background-color: #fff;
+  color: $green;
+  &:hover {
+    background-color: $green;
+    color: #fff;
+  }
+}
+
+.button--blue {
+  background-color: $blue;
+}
+
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+}

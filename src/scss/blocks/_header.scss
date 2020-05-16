@@ -1,0 +1,222 @@
+@import '../vars';
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid $green-border;
+  z-index: 2;
+  transition: border-bottom .1s;
+  transition-delay: .5s;
+}
+
+.header--fixed {
+  position: fixed;
+  -webkit-animation: .7s ease-in-out 0s normal forwards 1 running fadeInDown;
+  animation: .7s ease-in-out 0s normal forwards 1 running fadeInDown;
+  -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  border-bottom: none;
+}
+
+.header--border-none {
+  border-bottom: 1px solid transparent;
+  transition: border-bottom .2s;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  z-index: 1;
+  padding: 15px 0;
+}
+
+.shop-cart {
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.shop-cart__counter {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  min-width: 20px;
+  min-height: 20px;
+  background-color: tomato;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-cart__value {
+  color: #fff;
+  font-weight: 700;
+}
+
+//***Burger menu***
+.header__toggler-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 35px;
+  border: 2px solid $green;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.header__menu-toggler {
+  width: 25px;
+  height: 3px;
+  background-color: $green;
+  transition: background-color 1s;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: $green;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s
+  }
+
+  &::before {
+    top: 7px;
+  }
+
+  &::after {
+    top: -7px;
+  }
+}
+
+.toggler--active {
+  background-color: transparent;
+  transition: background-color 0.1s;
+
+  &::before {
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  }
+}
+
+.header__menu {
+  position: absolute;
+  top: -400%;
+  padding: 0 5%;
+  transition: all 0.5s ease 0s;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.menu--opened {
+  top: 100%;
+  transition: all 0.5s ease 0s;
+
+  .menu__list {
+    box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+    transition: box-shadow .2s;
+    transition-delay: .6s;
+  }
+}
+
+.menu__list {
+  box-shadow: 0 0 0 rgb(0, 0, 0, 0);
+}
+
+.menu__item {
+  background-color: #ffffff;
+
+  &:last-child {
+    padding-bottom: 20px;
+  }
+}
+
+.menu__link {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  color: $blue;
+  width: calc(100% - 0.8em);
+  padding: 20px 0 0 20px;
+
+  &:hover {
+    color: $green;
+    transition: color .3s;
+  }
+}
+
+@media (min-width: 576px) {
+  .header__menu {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__menu {
+    max-width: 690px;
+  }
+
+  .header__shop-cart {
+    padding-left: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .header__wrapper {
+    padding: 20px 0;
+  }
+
+  .header__menu {
+    max-width: 690px;
+    position: static;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header__toggler-wrapper {
+    display: none;
+  }
+
+  .header__menu {
+    position: static;
+  }
+
+  .menu__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu__item:last-child {
+    padding-bottom: 0;
+  }
+
+  .menu__link {
+    width: 100%;
+    padding: 0 0 0 20px;
+    font-weight: 700;
+    font-size: 21px;
+  }
+
+  .header__shop-cart {
+    padding-left: 0;
+  }
+}
