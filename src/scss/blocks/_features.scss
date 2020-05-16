@@ -1,0 +1,24 @@
+.features {
+  background-image: url('../images/features/features_bg.jpg');
+  padding: 120px 0 90px 0;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 2px 12.09px 6.91px rgba(82, 33, 162, 0.05);
+}
+
+.main__features {
+  margin-top: 50px;
+}
+
+.features__single-feature {
+  background: #fff;
+  padding: 45px 25px;
+  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.single-feature__img {
+  margin: 0 auto;
+}
+
