@@ -121,7 +121,8 @@
                         </div>
                         <div class="single-reason__description">
                             <h3 class="single-reason__title">Новая формула</h3>
-                            <p class="single-reason__subtitle">Используем современные, уникальные разработки ученых США в сфере
+                            <p class="single-reason__subtitle">Используем современные, уникальные разработки ученых США
+                                в сфере
                                 нутрициологии и производства пищевых добавок</p>
                         </div>
                     </div>
@@ -173,75 +174,102 @@
             </div>
         </div>
     </section>
+    <!--VIDEO AREA-->
+    <section class="video-area main__video-area">
+        <div class="container">
+            <div class="video-area__wrapper">
+                <a href="" class="video-area__play-button">
+                    <img src="images/video-area/play-img.svg" alt="play" class="play-button__img">
+                </a>
+                <h3 class="video-area__title section-title">Лучшая линейка продуктов для вашей физической формы</h3>
+                <p class="video-area__subtitle section-subtitle">Компания Suppke уже 15 лет занимает ведущие места на
+                    рынке спортивного питания, пищевых добавок и БАД'ов</p>
+                <button class="video-area__bottom-button button">Узнать больше</button>
+            </div>
+        </div>
+    </section>
+    <!--GALLERY-->
+    <section class="gallery">
+        <div class="container">
+            <h3 class="gallery__title section-title">Галерея</h3>
+            <div class="bar gallery__bar"></div>
+            <nav class="gallery__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link">Все товары</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Протеин</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Добавки</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Витамины</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Гейнеры</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
 </main>
 
-
-<div class="test-blocks container">
-    <div>
-        <div>Eius ipsa repudiandae vel voluptates? Blanditiis commodi facilis neque nostrum praesentium. Aperiam
-            assumenda
-            consequatur dicta, id laboriosam maiores natus neque nostrum nulla quae quia quibusdam tempora, temporibus
-            tenetur
-            voluptates, voluptatibus!
-        </div>
-        <div>Accusamus amet aperiam autem beatae, blanditiis cupiditate delectus deleniti dolor earum et ex fuga in
-            incidunt
-            inventore iusto minima natus nesciunt nostrum praesentium quae qui sequi similique tenetur voluptatem
-            voluptates?
-        </div>
-        <div>Ab autem blanditiis consequatur consequuntur, corporis dignissimos dolores earum error in ipsa ipsum,
-            itaque
-            laborum magni minima minus molestias neque porro possimus provident quis ratione vero voluptate, voluptates.
-            Deserunt, incidunt!
-        </div>
-        <div>Alias aliquam aspernatur assumenda at atque delectus distinctio, dolor ea ex id illo in laboriosam magnam
-            maiores
-            molestias odio porro quae quaerat quia quidem ratione tempore unde ut velit, voluptate.
-        </div>
-        <div>Eius ipsa repudiandae vel voluptates? Blanditiis commodi facilis neque nostrum praesentium. Aperiam
-            assumenda
-            consequatur dicta, id laboriosam maiores natus neque nostrum nulla quae quia quibusdam tempora, temporibus
-            tenetur
-            voluptates, voluptatibus!
-        </div>
-        <div>Accusamus amet aperiam autem beatae, blanditiis cupiditate delectus deleniti dolor earum et ex fuga in
-            incidunt
-            inventore iusto minima natus nesciunt nostrum praesentium quae qui sequi similique tenetur voluptatem
-            voluptates?
-        </div>
-        <div>Ab autem blanditiis consequatur consequuntur, corporis dignissimos dolores earum error in ipsa ipsum,
-            itaque
-            laborum magni minima minus molestias neque porro possimus provident quis ratione vero voluptate, voluptates.
-            Deserunt, incidunt!
-        </div>
-        <div>Alias aliquam aspernatur assumenda at atque delectus distinctio, dolor ea ex id illo in laboriosam magnam
-            maiores
-            molestias odio porro quae quaerat quia quidem ratione tempore unde ut velit, voluptate.
-        </div>
-        <div>Eius ipsa repudiandae vel voluptates? Blanditiis commodi facilis neque nostrum praesentium. Aperiam
-            assumenda
-            consequatur dicta, id laboriosam maiores natus neque nostrum nulla quae quia quibusdam tempora, temporibus
-            tenetur
-            voluptates, voluptatibus!
-        </div>
-        <div>Accusamus amet aperiam autem beatae, blanditiis cupiditate delectus deleniti dolor earum et ex fuga in
-            incidunt
-            inventore iusto minima natus nesciunt nostrum praesentium quae qui sequi similique tenetur voluptatem
-            voluptates?
-        </div>
-        <div>Ab autem blanditiis consequatur consequuntur, corporis dignissimos dolores earum error in ipsa ipsum,
-            itaque
-            laborum magni minima minus molestias neque porro possimus provident quis ratione vero voluptate, voluptates.
-            Deserunt, incidunt!
-        </div>
-        <div>Alias aliquam aspernatur assumenda at atque delectus distinctio, dolor ea ex id illo in laboriosam magnam
-            maiores
-            molestias odio porro quae quaerat quia quidem ratione tempore unde ut velit, voluptate.
-        </div>
+<h1>Isotope - filtering</h1>
+<div class="button-group filters-button-group">
+    <button class="button is-checked" data-filter="*">show all</button>
+    <button class="button" data-filter=".metal">metal</button>
+    <button class="button" data-filter=".transition">transition</button>
+    <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
+    <button class="button" data-filter=":not(.transition)">not transition</button>
+    <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
+</div>
+<div class="grid">
+    <div class="element-item transition metal " data-category="transition">
+        <h3 class="name">Mercury</h3>
+        <p class="symbol">Hg</p>
+        <p class="number">80</p>
+        <p class="weight">200.59</p>
+    </div>
+    <div class="element-item metalloid " data-category="metalloid">
+        <h3 class="name">Tellurium</h3>
+        <p class="symbol">Te</p>
+        <p class="number">52</p>
+        <p class="weight">127.6</p>
+    </div>
+    <div class="element-item post-transition metal " data-category="post-transition">
+        <h3 class="name">Bismuth</h3>
+        <p class="symbol">Bi</p>
+        <p class="number">83</p>
+        <p class="weight">208.980</p>
+    </div>
+    <div class="element-item post-transition metal " data-category="post-transition">
+        <h3 class="name">Lead</h3>
+        <p class="symbol">Pb</p>
+        <p class="number">82</p>
+        <p class="weight">207.2</p>
+    </div>
+    <div class="element-item transition metal " data-category="transition">
+        <h3 class="name">Gold</h3>
+        <p class="symbol">Au</p>
+        <p class="number">79</p>
+        <p class="weight">196.967</p>
     </div>
 </div>
+
+
+
+<script src="js/libs/isotope.pkgd.min.js"></script>
+
+<script>
+    var iso = new Isotope('.grid', {
+      itemSelector: '.element-item',
+      layoutMode: 'fitRows'
+    });
+    var filtersElem = document.querySelector('.filters-button-group');
+    filtersElem.addEventListener( 'click', function( event ) {
+      if ( !matchesSelector( event.target, 'button' ) ) {
+        return;
+      }
+      var filterValue = event.target.getAttribute('data-filter');
+      iso.arrange({ filter: filterValue });
+    });
+
+</script>
 <script src="js/burgerMenu.js"></script>
 <script src="js/scrollHandler.js"></script>
+<script src="js/isotopeSlider.js"></script>
 <div class="mediaQueryINFORMATION">
     <!--&#45;&#45;breakpoint-xs: 0;-->
     <!--&#45;&#45;breakpoint-sm: 576px;-->
