@@ -27,3 +27,24 @@
   }
 }
 
+@keyframes movingCircle  {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(163px);
+    transform: translateX(163px);
+  }
+}
+@-webkit-keyframes movingCircle {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(163px);
+    transform: translateX(163px);
+  }
+}
+
