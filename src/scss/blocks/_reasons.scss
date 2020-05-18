@@ -1,12 +1,177 @@
+.reasons__description {
+  margin-bottom: 50px;
+}
 
 .single-reason__image-edging {
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  border: 1px dashed $blue;
+  border: 2px dashed $blue;
   background-color: transparent;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.reasons__single-reason {
+  margin-bottom: 40px;
+}
+
+.single-reason__title,
+.single-reason__subtitle{
+  text-align: center;
+}
+
+.single-reason__title {
+  font-weight: 700;
+  color: $blue;
+}
+
+.reasons__main-img {
+  position: relative;
+  margin: 0 auto;
+}
+
+.reasons__main-img-wrapper {
+  display: none;
+  //position: relative;
+  //&::before {
+  //  content: "";
+  //  position: absolute;
+  //  width: 578px;
+  //  height: 578px;
+  //  left: -58px;
+  //  top: -31px;
+  //  z-index: -1;
+  //  background-image: url(../images/reasons/ellips-shape.png);
+  //  background-repeat: no-repeat;
+  //}
+  //&::after {
+  //  content: '';
+  //  position: absolute;
+  //  width: 709px;
+  //  height: 585px;
+  //  left: -124px;
+  //  top: -27px;
+  //  z-index: -1;
+  //  background-image: url(../images/reasons/services-shape.png);
+  //  background-repeat: no-repeat;
+  //}
+}
+
+@media (min-width: 576px) {
+  .reasons__cards {
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .reasons__single-reason {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .single-reason__image-edging {
+    margin: 0 30px 0 0;
+
+  }
+  .single-reason__title,
+  .single-reason__subtitle{
+    text-align: left;
+  }
+
+  .single-reason__description {
+    max-width: 395px;
+  }
+}
+
+@media (min-width: 768px) {
+  .reasons__main-content {
+    display: flex;
+  }
+
+  .reasons__cards {
+    padding: 0;
+  }
+
+  .reasons__single-reason {
+    align-items: start;
+    margin: 0;
+    min-height: 120px;
+  }
+
+  .single-reason__image-edging {
+    margin: 0;
+  }
+
+  .single-reason__description {
+    max-width: 250px;
+  }
+
+  .reasons__card--first-col {
+    padding-right: 30px;
+    .reasons__single-reason {
+      flex-direction: row-reverse;
+    }
+    .single-reason__description {
+      padding-right: 15px;
+    }
+    .single-reason__title,
+    .single-reason__subtitle {
+      text-align: right;
+    }
+  }
+
+  .reasons__card--second-col {
+    .single-reason__description {
+      padding-left: 15px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .reasons__main-img-wrapper {
+    display: block;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 578px;
+      height: 578px;
+      right: -159px;
+      top: -105px;
+      z-index: -1;
+      background-image: url(../images/reasons/ellips-shape.png);
+      background-repeat: no-repeat;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 709px;
+      height: 585px;
+      left: -226px;
+      top: -105px;
+      z-index: -1;
+      background-image: url(../images/reasons/services-shape.png);
+      background-repeat: no-repeat;
+    }
+  }
+
+  .single-reason__description {
+    //max-width: 465px;
+  }
+
+  .reasons__cards {
+    max-width: 410px;
+  }
+
+  .reasons__card--second-col {
+    padding-left: 30px;
+    .reasons__single-reason {
+
+    }
+  }
+
 }

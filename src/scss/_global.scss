@@ -17,6 +17,10 @@ body {
   overflow-x: hidden;
 }
 
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+
 ul, li {
   margin: 0;
   padding: 0;
@@ -71,6 +75,12 @@ img {
   font-size: 32px;
   font-weight: 700;
   color: $blue;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: $grey;
+  text-align: center;
 }
 
 .bar {
@@ -95,6 +105,8 @@ img {
     animation-iteration-count: infinite;
   }
 }
+
+
 
 
 
