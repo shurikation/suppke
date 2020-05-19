@@ -53,7 +53,7 @@
                 <img class="promo__img" src="images/promo/promo-product.png" alt="спортивное питание">
                 <div class="promo__info-wrapper">
                     <div class="promo__description">
-                        <h3 class="promo__title">Протеин <span>премиум-класса</span> &laquo;Suppke Protein&raquo;</h3>
+                        <h3 class="promo__title">Протеин <span>премиум-класса</span> &laquo;Suppke Protein&raquo</h3>
                         <p class="promo__subtitle">Изготовлен по новейшим технологиям на современном оборудовании из
                             выскокачественного сырья</p>
                     </div>
@@ -132,7 +132,7 @@
                         </div>
                         <div class="single-reason__description">
                             <h3 class="single-reason__title">Высококачественный протеин</h3>
-                            <p class="single-reason__subtitle">Производство только из отборного сырья</p>
+                            <p class="single-reason__subtitle">Компания Suppke специализируется исключительно на создании протеиновых добавок</p>
                         </div>
                     </div>
                 </div>
@@ -193,83 +193,115 @@
         <div class="container">
             <h3 class="gallery__title section-title">Галерея</h3>
             <div class="bar gallery__bar"></div>
-            <nav class="gallery__nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link">Все товары</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Протеин</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Добавки</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Витамины</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Гейнеры</a></li>
-                </ul>
+            <nav class="product-menu gallery__product-menu">
+                <button class="button product-menu__button" data-type="all">Весь протеин</button>
+                <button class="button product-menu__button" data-type="capsules">Капсулы</button>
+                <button class="button product-menu__button" data-type="powder">Порошок</button>
             </nav>
+            <div class="gallery__cards-wrapper">
+                <div class="gallery__card card" data-type="powder">
+                    <a href="#" class="card__link">
+                        <img class="card__img" src="images/gallery/item-1.png" alt="протеин">
+                    </a>
+                    <div class="card__overlay">
+                        <h4 class="card__title">&laquo;Suppke Protein Powder&raquo</h4>
+                        <span class="card__subtitle">Протеин в порошке, 1000 гр</span>
+                    </div>
+                </div>
+                <div class="gallery__card card" data-type="capsules">
+                    <a href="#" class="card__link">
+                        <img class="card__img" src="images/gallery/item-2.png" alt="протеин">
+                    </a>
+                    <div class="card__overlay">
+                        <h4 class="card__title">&laquo;Suppke Protein Capsules&raquo</h4>
+                        <span class="card__subtitle">Протеин в капсулах, 600 гр</span>
+                    </div>
+                </div>
+                <div class="gallery__card card" data-type="capsules">
+                    <a href="#" class="card__link">
+                        <img class="card__img" src="images/gallery/item-3.png" alt="протеин">
+                    </a>
+                    <div class="card__overlay">
+                        <h4 class="card__title">&laquo;Suppke Protein Capsules&raquo</h4>
+                        <span class="card__subtitle">Протеин в капсулах, 600 гр</span>
+                    </div>
+                </div>
+                <div class="gallery__card card" data-type="powder">
+                    <a href="#" class="card__link">
+                        <img class="card__img" src="images/gallery/item-4.png" alt="протеин">
+                    </a>
+                    <div class="card__overlay">
+                        <h4 class="card__title">&laquo;Suppke Protein Powder&raquo</h4>
+                        <span class="card__subtitle">Протеин в порошке, 1000 гр</span>
+                    </div>
+                </div>
+                <div class="gallery__card card" data-type="powder">
+                    <a href="#" class="card__link">
+                        <img class="card__img" src="images/gallery/item-5.png" alt="протеин">
+                    </a>
+                    <div class="card__overlay">
+                        <h4 class="card__title">&laquo;Suppke Protein Powder&raquo</h4>
+                        <span class="card__subtitle">Протеин в порошке, 1000 гр</span>
+                    </div>
+                </div>
+                <div class="gallery__card card" data-type="capsules">
+                    <a href="#" class="card__link">
+                        <img class="card__img" src="images/gallery/item-6.png" alt="протеин">
+                    </a>
+                    <div class="card__overlay">
+                        <h4 class="card__title">&laquo;Suppke Protein Capsules&raquo</h4>
+                        <span class="card__subtitle">Протеин в капсулах, 600 гр</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>
 
-<h1>Isotope - filtering</h1>
-<div class="button-group filters-button-group">
-    <button class="button is-checked" data-filter="*">show all</button>
-    <button class="button" data-filter=".metal">metal</button>
-    <button class="button" data-filter=".transition">transition</button>
-    <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
-    <button class="button" data-filter=":not(.transition)">not transition</button>
-    <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
-</div>
-<div class="grid">
-    <div class="element-item transition metal " data-category="transition">
-        <h3 class="name">Mercury</h3>
-        <p class="symbol">Hg</p>
-        <p class="number">80</p>
-        <p class="weight">200.59</p>
-    </div>
-    <div class="element-item metalloid " data-category="metalloid">
-        <h3 class="name">Tellurium</h3>
-        <p class="symbol">Te</p>
-        <p class="number">52</p>
-        <p class="weight">127.6</p>
-    </div>
-    <div class="element-item post-transition metal " data-category="post-transition">
-        <h3 class="name">Bismuth</h3>
-        <p class="symbol">Bi</p>
-        <p class="number">83</p>
-        <p class="weight">208.980</p>
-    </div>
-    <div class="element-item post-transition metal " data-category="post-transition">
-        <h3 class="name">Lead</h3>
-        <p class="symbol">Pb</p>
-        <p class="number">82</p>
-        <p class="weight">207.2</p>
-    </div>
-    <div class="element-item transition metal " data-category="transition">
-        <h3 class="name">Gold</h3>
-        <p class="symbol">Au</p>
-        <p class="number">79</p>
-        <p class="weight">196.967</p>
-    </div>
-</div>
 
 
-
-<script src="js/libs/isotope.pkgd.min.js"></script>
 
 <script>
-    var iso = new Isotope('.grid', {
-      itemSelector: '.element-item',
-      layoutMode: 'fitRows'
+  const animationTime = 300;
+  const $buttonsParent = document.querySelector('.product-menu');
+  const arrayOfCards = Array.from(document.querySelectorAll('.card'));
+
+  $buttonsParent.addEventListener('click', (event) => showCorrectCards(event));
+
+  function showCorrectCards(event) {
+    const currentFilter = event.target.dataset.type;
+    if (currentFilter === 'all') {
+      arrayOfCards.forEach(card => {
+        card.classList.remove('collapse', 'smoothlyHide');
+        card.classList.add('smoothlyShow');
+        // console.log(card.getAttribute('data-type'));
+      });
+      return;
+    }
+
+    const filteredInvisibleCards = arrayOfCards.filter(card => card.dataset.type !== currentFilter);
+    const filteredVisibleCards = arrayOfCards.filter(card => card.dataset.type === currentFilter);
+
+    filteredInvisibleCards.forEach(card => {
+      card.classList.remove('smoothlyShow');
+      card.classList.add('smoothlyHide');
+      card.style.animationDuration = animationTime.toString() + 'ms';
+      setTimeout(() => card.classList.add('collapse'), animationTime);
+
     });
-    var filtersElem = document.querySelector('.filters-button-group');
-    filtersElem.addEventListener( 'click', function( event ) {
-      if ( !matchesSelector( event.target, 'button' ) ) {
-        return;
-      }
-      var filterValue = event.target.getAttribute('data-filter');
-      iso.arrange({ filter: filterValue });
+
+    filteredVisibleCards.forEach(card => {
+      card.classList.remove('smoothlyHide');
+      card.classList.add('smoothlyShow');
+      card.style.animationDuration = animationTime.toString() + 'ms';
+      setTimeout(() => card.classList.remove('collapse'), animationTime);
     });
+  }
 
 </script>
 <script src="js/burgerMenu.js"></script>
 <script src="js/scrollHandler.js"></script>
-<script src="js/isotopeSlider.js"></script>
+<!--<script src="js/isotopeSlider.js"></script>-->
 <div class="mediaQueryINFORMATION">
     <!--&#45;&#45;breakpoint-xs: 0;-->
     <!--&#45;&#45;breakpoint-sm: 576px;-->
