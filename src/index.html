@@ -189,7 +189,7 @@
         </div>
     </section>
     <!--GALLERY-->
-    <section class="gallery">
+    <section class="gallery main__gallery">
         <div class="container">
             <h3 class="gallery__title section-title">Галерея</h3>
             <div class="bar gallery__bar"></div>
@@ -262,46 +262,19 @@
 
 
 <script>
-  const animationTime = 300;
-  const $buttonsParent = document.querySelector('.product-menu');
-  const arrayOfCards = Array.from(document.querySelectorAll('.card'));
+    // const $galleryWrapper = document.querySelector('.gallery');
+  //  console.log($galleryWrapper.clientHeight);
 
-  $buttonsParent.addEventListener('click', (event) => showCorrectCards(event));
+    //const infor = window.getComputedStyle($galleryWrapper);
+   // console.log(infor.height);
 
-  function showCorrectCards(event) {
-    const currentFilter = event.target.dataset.type;
-    if (currentFilter === 'all') {
-      arrayOfCards.forEach(card => {
-        card.classList.remove('collapse', 'smoothlyHide');
-        card.classList.add('smoothlyShow');
-        // console.log(card.getAttribute('data-type'));
-      });
-      return;
-    }
+    //document.styleSheets[0].insertRule("#immm { width: 100%; height: 100%;  }", 0);
 
-    const filteredInvisibleCards = arrayOfCards.filter(card => card.dataset.type !== currentFilter);
-    const filteredVisibleCards = arrayOfCards.filter(card => card.dataset.type === currentFilter);
-
-    filteredInvisibleCards.forEach(card => {
-      card.classList.remove('smoothlyShow');
-      card.classList.add('smoothlyHide');
-      card.style.animationDuration = animationTime.toString() + 'ms';
-      setTimeout(() => card.classList.add('collapse'), animationTime);
-
-    });
-
-    filteredVisibleCards.forEach(card => {
-      card.classList.remove('smoothlyHide');
-      card.classList.add('smoothlyShow');
-      card.style.animationDuration = animationTime.toString() + 'ms';
-      setTimeout(() => card.classList.remove('collapse'), animationTime);
-    });
-  }
 
 </script>
 <script src="js/burgerMenu.js"></script>
 <script src="js/scrollHandler.js"></script>
-<!--<script src="js/isotopeSlider.js"></script>-->
+<script src="js/galleryImageFilter.js"></script>
 <div class="mediaQueryINFORMATION">
     <!--&#45;&#45;breakpoint-xs: 0;-->
     <!--&#45;&#45;breakpoint-sm: 576px;-->
