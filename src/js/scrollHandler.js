@@ -1,20 +1,20 @@
 const $promo = document.querySelector('.promo__img');
 
 window.addEventListener("scroll", throttleScroll);
-
 let isScrolling = false;
 
 function throttleScroll() {
   if (isScrolling === false) {
     window.requestAnimationFrame(function () {
-      showElem();
+      isElemShouldBeShown();
+      isCountersShouldBeRunning();
       isScrolling = false;
     });
   }
   isScrolling = true;
 }
 
-function showElem() {
+function isElemShouldBeShown() {
   if (isBlockScrolledDown($promo)) {
     $header.classList.add('header--fixed');
   } else {
