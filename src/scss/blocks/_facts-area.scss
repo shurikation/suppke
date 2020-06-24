@@ -3,6 +3,7 @@
   padding: 70px 0 75px 0;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -19,8 +20,13 @@
   }
 }
 
+.facts-area__title {
+  font-size: 28px;
+}
+
 .facts-area__subtitle {
   margin-top: 20px;
+  font-size: 20px;
 }
 
 .facts-area__title,
@@ -33,6 +39,7 @@
 .fact-card__title {
   display: inline-block;
   color: $green;
+  font-size: 32px;
 }
 
 .fact-card__img {
@@ -51,11 +58,31 @@
 }
 
 .facts-area__fact-card {
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .fact-num {
   min-width: 20px;
   display: inline-block;
-  font-size: 18px;
+  font-size: 34px;
+}
+
+@media (min-width: 992px) {
+  .facts-area__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .facts-area__fact-card {
+    margin-top: 50px;
+    flex: 0 0 22%;
+  }
+
+  .facts-area__subtitle {
+    font-size: 16px;
+  }
+
+  .fact-card__subtitle {
+    height: 100%;
+  }
 }
