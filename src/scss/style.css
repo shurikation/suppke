@@ -999,5 +999,232 @@ img {
     height: 100%;
   }
 }
+.main__example {
+  margin-top: 30px;
+}
+
+.example__changes {
+  position: relative;
+  max-width: 290px;
+  margin: 25px auto 0 auto;
+}
+
+.changes__image-wrapper--before {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+}
+
+.changes__image--before {
+  max-width: none;
+  background-image: linear-gradient(to bottom, #fff, #fff);
+}
+
+.changes__image--after {
+  margin-left: 15px;
+}
+
+.changes__button--before,
+.changes__button--after {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dashed #062A4D;
+  color: #062A4D;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  outline: none;
+  padding: 0;
+}
+
+.changes__slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changes__slider-container {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+.changes__slider-control {
+  padding: 2px 5px 0 5px;
+}
+
+.slider-control {
+  -webkit-appearance: none;
+  background: transparent;
+}
+.slider-control:focus {
+  outline: none;
+}
+.slider-control::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.slider-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 35px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #2ACB35;
+  box-shadow: none;
+  border: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.slider-control::-moz-range-thumb {
+  width: 35px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #2ACB35;
+  box-shadow: none;
+  border: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.slider-control::-ms-thumb {
+  width: 35px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #2ACB35;
+  box-shadow: none;
+  border: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.slider-control::-webkit-slider-runnable-track {
+  width: 84px;
+  height: 14px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #747373;
+  padding: 0 5px;
+}
+
+.slider-control::-moz-range-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.slider-control::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+@media (min-width: 576px) {
+  .slider-control {
+    min-width: 300px;
+    -webkit-appearance: none;
+    background: transparent;
+  }
+  .slider-control:focus {
+    outline: none;
+  }
+  .slider-control::-ms-track {
+    min-width: 300px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  .slider-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #2ACB35;
+    border: 11px solid #062A4D;
+    margin-top: -14px;
+    cursor: pointer;
+  }
+
+  .slider-control::-moz-range-thumb {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #2ACB35;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border: 13px solid white;
+    cursor: pointer;
+  }
+
+  .slider-control::-ms-thumb {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #2ACB35;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border: 13px solid white;
+    cursor: pointer;
+  }
+
+  .slider-control::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #e1e1e1;
+    padding: 1px 0;
+    border: none;
+  }
+
+  .slider-control::-moz-range-track {
+    width: 428px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #c4c4c4;
+    padding: 0;
+    border: none;
+  }
+
+  .slider-control::-ms-track {
+    width: 428px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #c4c4c4;
+    padding: 0;
+    border: none;
+  }
+}
+@media (min-width: 768px) {
+  .slider-control {
+    min-width: 400px;
+  }
+  .slider-control::-ms-track {
+    min-width: 400px;
+  }
+}
+@media (min-width: 992px) {
+  .slider-control {
+    min-width: 450px;
+  }
+  .slider-control::-ms-track {
+    min-width: 450px;
+  }
+}
+@media (min-width: 1200px) {
+  .slider-control {
+    min-width: 500px;
+  }
+  .slider-control::-ms-track {
+    min-width: 500px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

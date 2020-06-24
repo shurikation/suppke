@@ -1,0 +1,45 @@
+.main__example {
+  margin-top: 30px;
+}
+
+.example__changes {
+  position: relative;
+  max-width: 290px;
+  margin: 25px auto 0 auto;
+}
+
+.changes__image-wrapper--before {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+}
+
+.changes__image--before {
+  max-width: none;
+  background-image: linear-gradient(to bottom, #fff, #fff);
+}
+
+.changes__image--after {
+  margin-left: 15px;
+}
+
+.changes__button--before,
+.changes__button--after{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dashed $blue;
+  color: $blue;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  outline: none;
+  padding: 0
+
+}
+
+.changes__slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
