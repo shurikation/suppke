@@ -1,0 +1,42 @@
+///Slider Test
+
+//.test-size {
+//  min-height: 100%;
+//}
+
+.order__product-slider {
+  margin-top: 30px;
+}
+
+.product-slider__chosen-img,
+.product-slider__nav,
+.product-slider__images {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+
+.chosen-img__img  {
+  margin: 0 auto;
+}
+
+.chosen-img__img,
+.product-slider__img {
+  background-color: #ededed;
+}
+
+.product-slider__img {
+  max-width: 29%;
+  margin: 2% 2% 0 2%;
+}
+
+.product-slider__arrow--right,
+.product-slider__arrow--left {
+  width: 25px;
+  height: 29px;
+}
+
+
+
+

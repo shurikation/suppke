@@ -76,6 +76,25 @@
     opacity: 0;
   }
 }
+.collapse {
+  display: none;
+}
+
+.smoothlyHide {
+  opacity: 1;
+  animation-name: smoothlyHide;
+  animation-duration: 250ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.smoothlyShow {
+  opacity: 0;
+  animation-name: smoothlyShow;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
 @keyframes smoothlyShow {
   0% {
     opacity: 0;
@@ -183,7 +202,7 @@ img {
 .bar {
   height: 2px;
   width: 165px;
-  background: #c4c4c4;
+  background: #e8e8e8;
   margin: 20px auto 30px;
   position: relative;
   border-radius: 50%;
@@ -201,25 +220,6 @@ img {
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-}
-
-.collapse {
-  display: none;
-}
-
-.smoothlyHide {
-  opacity: 1;
-  animation-name: smoothlyHide;
-  animation-duration: 250ms;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-}
-
-.smoothlyShow {
-  opacity: 0;
-  animation-name: smoothlyShow;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
 }
 
 @media (min-width: 576px) {
@@ -1195,7 +1195,7 @@ img {
     width: 428px;
     height: 6px;
     border-radius: 3px;
-    background-color: #c4c4c4;
+    background-color: #e8e8e8;
     padding: 0;
     border: none;
   }
@@ -1204,7 +1204,7 @@ img {
     width: 428px;
     height: 6px;
     border-radius: 3px;
-    background-color: #c4c4c4;
+    background-color: #e8e8e8;
     padding: 0;
     border: none;
   }
@@ -1233,6 +1233,38 @@ img {
     min-width: 500px;
   }
 }
+.order__product-slider {
+  margin-top: 30px;
+}
+
+.product-slider__chosen-img,
+.product-slider__nav,
+.product-slider__images {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.chosen-img__img {
+  margin: 0 auto;
+}
+
+.chosen-img__img,
+.product-slider__img {
+  background-color: #ededed;
+}
+
+.product-slider__img {
+  max-width: 29%;
+  margin: 2% 2% 0 2%;
+}
+
+.product-slider__arrow--right,
+.product-slider__arrow--left {
+  width: 25px;
+  height: 29px;
+}
+
 .test__bottomAir {
   margin-top: 100px;
 }

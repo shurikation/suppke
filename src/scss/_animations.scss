@@ -81,6 +81,23 @@
   }
 }
 
+.collapse {
+  display: none;
+}
+.smoothlyHide {
+  opacity: 1;
+  animation-name: smoothlyHide;
+  animation-duration: 250ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.smoothlyShow {
+  opacity: 0;
+  animation-name: smoothlyShow;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
 @keyframes smoothlyShow {
   0% {
     opacity: 0;
@@ -107,3 +124,5 @@
     opacity: 0;
   }
 }
+
+
