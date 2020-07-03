@@ -36,8 +36,20 @@ img {
   display: block;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+
 .container {
-  //width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }

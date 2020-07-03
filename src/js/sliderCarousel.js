@@ -6,8 +6,10 @@ const $sliderChosenImage = document.querySelector('.product-slider__chosen-img')
 
 //Product Info
 const $productTitle = document.querySelector('.product-info__title');
-const $productPrice = document.querySelector('.product-info__price');
+const $productPrice = document.querySelector('.product-info__price > span');
 const $productDescription = document.querySelector('.product-info__description');
+
+const smoothlyShowAndHideAnimationDuration =  getComputedStyle(document.documentElement).getPropertyValue('--smoothlyShowDuration');
 
 const data = [
   {
@@ -55,7 +57,11 @@ const data = [
 ];
 
 const maxIDValueOfProducts = data.length - 1;
-const numOfSliderImages = 3;
+let numOfSliderImages = 3;
+
+if (document.documentElement.clientWidth >= 768) {
+   numOfSliderImages = 4;
+}
 
 sliderImagesRender();
 
@@ -72,29 +78,37 @@ function sliderImagesRender() {
 }
 
 function leftArrowClickHandler() {
+  $sliderImages.firstElementChild.classList.add('smoothlyHide');
+
+  setTimeout(() => {
   let idOfNextBlock = getElemID($sliderImages.lastElementChild) + 1;
 
   if (idOfNextBlock > maxIDValueOfProducts) {
     idOfNextBlock = 0;
   }
 
-  addImageToSlider(idOfNextBlock, 'beforeEnd', data);
 
-  $sliderImages.firstElementChild.remove();
-  displayChosenImage($sliderImages.firstElementChild);
+
+    $sliderImages.firstElementChild.remove();
+    displayChosenImage($sliderImages.firstElementChild);
+    addImageToSlider(idOfNextBlock, 'beforeEnd');
+  }, 150);
 }
 
 function rightArrowClickHandler() {
+  $sliderImages.lastElementChild.classList.add('smoothlyHide');
+
+  setTimeout(() => {
   let idOfPrevBlock = getElemID($sliderImages.firstElementChild) - 1;
 
   if (idOfPrevBlock < 0) {
     idOfPrevBlock = maxIDValueOfProducts;
   }
 
-  addImageToSlider(idOfPrevBlock, 'afterBegin', data);
-
-  $sliderImages.lastElementChild.remove();
-  displayChosenImage($sliderImages.lastElementChild);
+    $sliderImages.lastElementChild.remove();
+    displayChosenImage($sliderImages.lastElementChild);
+    addImageToSlider(idOfPrevBlock, 'afterBegin');
+  }, 150);
 }
 
 function imageClickHandler(event) {
@@ -109,10 +123,12 @@ function displayChosenImage($image) {
   }
   const $imageClone = $image.cloneNode(true);
 
-  $imageClone.className = 'chosen-img__img';
+  $imageClone.className = 'chosen-img__img smoothlyShow';
+
   $sliderChosenImage.insertAdjacentElement('afterBegin', $imageClone);
 
   showProductDescription($imageClone.getAttribute('data-idx'));
+
 }
 
 function getElemID(block) {
@@ -120,17 +136,19 @@ function getElemID(block) {
   return parseInt(blockValue.match(/[0-9]/s)[0]);
 }
 
-function addImageToSlider(id, position, data) {
+function addImageToSlider(id, position) {
   const elem = `<img class="product-slider__img product-img_${id}" 
                 src="${data[id].img}"
                 data-idx="${id}" 
                 alt="спортивное питание">`;
 
   $sliderImages.insertAdjacentHTML(position, elem);
+
 }
 
 function showProductDescription(idx) {
   $productTitle.innerText = data[idx].name;
   $productPrice.innerText = data[idx].price;
   $productDescription.innerText = data[idx].description;
+
 }

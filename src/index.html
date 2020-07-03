@@ -193,7 +193,7 @@
     <!--    <section class="gallery main__gallery">-->
     <!--        <div class="container">-->
     <!--            <h3 class="gallery__title section-title">Галерея</h3>-->
-<!--                <div class="bar gallery__bar"></div>-->
+    <!--                <div class="bar gallery__bar"></div>-->
     <!--            <nav class="product-menu gallery__product-menu">-->
     <!--                <button class="button product-menu__button" data-type="all">Весь протеин</button>-->
     <!--                <button class="button product-menu__button" data-type="capsules">Капсулы</button>-->
@@ -321,62 +321,41 @@
             <div class="bar"></div>
             <p class="section-subtitle">Выбирайте и заказывайте нашу продукцию!</p>
 
-            <div class="order__product-slider">
-                <div class="product-slider__chosen-img">
-<!--                    IMG HERE!  .chosen-img__img  -->
-                </div>
-                <div class="product-slider__nav">
-                    <img class="product-slider__arrow--left" src="images/order/back.svg">
-                    <div class="product-slider__images">
-<!--                        IMGs HERE! .product-slider__img-->
+            <div class="order__content-wrapper">
+                <div class="order__product-slider">
+                    <div class="product-slider__chosen-img">
+                        <!--                    IMG HERE!  .chosen-img__img  -->
                     </div>
-                    <img class="product-slider__arrow--right" src="images/order/next.svg">
+                    <div class="product-slider__nav">
+                        <img class="product-slider__arrow--left" src="images/order/back.svg">
+                        <div class="product-slider__images">
+                            <!--                        IMGs HERE! .product-slider__img-->
+                        </div>
+                        <img class="product-slider__arrow--right" src="images/order/next.svg">
+                    </div>
+                </div>
+
+                <div class="order__product-info-wrapper">
+                    <div class="order__product-info">
+                        <h4 class="product-info__title"></h4>
+                        <p class="product-info__price"><span></span>&#8381</p>
+                        <p class="product-info__description "></p>
+                    </div>
+                    <div class="order__buttons-wrapper">
+                        <div class="count-button">
+                            <button class="count-button__minus">-</button>
+                            <input class="count-button__num" type="number" value="0">
+                            <button class="count-button__plus">+</button>
+                        </div>
+                        <button class="add-to-card-button button">Добавить в корзину</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="order__product-info">
-                <h4 class="product-info__title"></h4>
-                <p class="product-info__price"></p>
-                <p class="product-info__description"></p>
-            </div>
 
-            <div class="order__buttons">
-<!--                <div class="order__btn-wrapper">-->
-<!--                    <button>-</button>-->
-<!--                    <input type="number">-->
-<!--                    <button>+</button>-->
-<!--                </div>-->
-
-                <button>Добавить в корзину</button>
-            </div>
         </div>
     </section>
-
-
-
-    <div class="buyProduct">
-<!--        <div class="slider">-->
-<!--            <div class="slider__chosen-image">-->
-
-<!--            </div>-->
-<!--            <div class="slider__wrapper">-->
-<!--                <div class="arrow arrow&#45;&#45;left"></div>-->
-<!--                <div class="blocks__wrapper">-->
-<!--                    &lt;!&ndash;            <div class="block block_$">*IMAGE*</div>&ndash;&gt;-->
-<!--                </div>-->
-<!--                <div class="arrow arrow&#45;&#45;right"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="product-info">-->
-<!--            <div class="test-title"></div>-->
-<!--            <div class="test-price"></div>-->
-<!--            <div class="test-description"></div>-->
-<!--        </div>-->
-    </div>
-
 </main>
-
-
 
 
 <div class="test__bottomAir">
@@ -401,6 +380,7 @@
 <script src="js/countersHandler.js"></script>
 <!--<script src="js/sliderAnimation.js"></script>-->
 <script src="js/sliderCarousel.js"></script>
+<script src="js/card.js"></script>
 <div class="mediaQueryINFORMATION">
 
 </div>

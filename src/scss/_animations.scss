@@ -87,13 +87,14 @@
 .smoothlyHide {
   opacity: 1;
   animation-name: smoothlyHide;
-  animation-duration: 250ms;
+  animation-duration: 150ms;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }
 .smoothlyShow {
   opacity: 0;
   animation-name: smoothlyShow;
+  animation-duration: 150ms;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }
