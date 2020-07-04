@@ -33,7 +33,7 @@
   padding: 15px 0;
 }
 
-.shop-cart {
+.shop-cart-icon {
   position: relative;
   &:hover {
     cursor: pointer;
@@ -174,7 +174,7 @@
     max-width: 690px;
   }
 
-  .header__shop-cart {
+  .header__shop-cart-icon {
     padding-left: 50%;
   }
 }
@@ -217,7 +217,7 @@
     font-size: 21px;
   }
 
-  .header__shop-cart {
+  .header__shop-cart-icon {
     padding-left: 0;
   }
 }
