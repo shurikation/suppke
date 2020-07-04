@@ -322,8 +322,8 @@
             <p class="section-subtitle">Выбирайте и заказывайте нашу продукцию!</p>
             <div class="order__content-wrapper">
                 <div class="order__product-slider">
-                    <div class="product-slider__chosen-img">
-                        <!--                    IMG HERE!  .chosen-img__img  -->
+                    <div class="product-slider__chosen-product">
+                        <!--                    IMG HERE!  .chosen-product__img  -->
                     </div>
                     <div class="product-slider__nav">
                         <img class="product-slider__arrow--left" src="images/order/back.svg">
@@ -343,7 +343,7 @@
                     <div class="order__buttons-wrapper">
                         <div class="count-button">
                             <button class="count-button__minus">-</button>
-                            <input class="count-button__num" type="number" value="0">
+                            <input class="count-button__input" type="number" value="0" disabled>
                             <button class="count-button__plus">+</button>
                         </div>
                         <button class="add-to-card-button button">Добавить в корзину</button>
@@ -385,14 +385,9 @@
 
 
 <div class="test__bottomAir">
-    <div>Amet animi aperiam asperiores assumenda consequuntur, cum cupiditate dolores ducimus facere harum id incidunt
+Amet animi aperiam asperiores assumenda consequuntur, cum cupiditate dolores ducimus facere harum id incidunt
         itaque laboriosam molestiae nesciunt odit quae quam quasi qui quia recusandae rerum saepe vero voluptas
-        voluptatum.
-    </div>
-    <div>Aliquid consequatur eum explicabo facere, magni necessitatibus, possimus qui quibusdam reiciendis, rerum sed
-        tempore vero voluptate. A consequatur cupiditate delectus eaque esse maiores molestias, nisi nostrum odio
-        reprehenderit saepe vero!
-    </div>
+        voluptatum
 </div>
 <!--&#45;&#45;breakpoint-xs: 0;-->
 <!--&#45;&#45;breakpoint-sm: 576px;-->
@@ -405,9 +400,9 @@
 <!--&lt;!&ndash;<script src="js/galleryImageFilter.js"></script>&ndash;&gt;-->
 <!--<script src="js/countersHandler.js"></script>-->
 <!--&lt;!&ndash;<script src="js/sliderAnimation.js"></script>&ndash;&gt;-->
-<!--<script src="js/sliderCarousel.js"></script>-->
+<script src="js/sliderCarousel.js"></script>
 <!--<script src="js/cart.js"></script>-->
-<script src="index.js"></script>
-
+<!--<script src="index.js"></script>-->
+<script src="../dist/bundle.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 const $arrowLeft = document.querySelector('.product-slider__arrow--left');
 const $arrowRight = document.querySelector('.product-slider__arrow--right');
 const $sliderImages = document.querySelector('.product-slider__images');
-const $sliderChosenImage = document.querySelector('.product-slider__chosen-img');
+const $sliderChosenImage = document.querySelector('.product-slider__chosen-product');
 
 //Product Info
 const $productTitle = document.querySelector('.product-info__title');
@@ -87,8 +87,6 @@ function leftArrowClickHandler() {
     idOfNextBlock = 0;
   }
 
-
-
     $sliderImages.firstElementChild.remove();
     displayChosenImage($sliderImages.firstElementChild);
     addImageToSlider(idOfNextBlock, 'beforeEnd');
@@ -123,11 +121,11 @@ function displayChosenImage($image) {
   }
   const $imageClone = $image.cloneNode(true);
 
-  $imageClone.className = 'chosen-img__img smoothlyShow';
+  $imageClone.className = 'chosen-product__img smoothlyShow';
 
   $sliderChosenImage.insertAdjacentElement('afterBegin', $imageClone);
 
-  showProductDescription($imageClone.getAttribute('data-idx'));
+  showProductDescription($imageClone.getAttribute('data-id'));
 
 }
 
@@ -139,16 +137,16 @@ function getElemID(block) {
 function addImageToSlider(id, position) {
   const elem = `<img class="product-slider__img product-img_${id}" 
                 src="${data[id].img}"
-                data-idx="${id}" 
+                data-id="${id}" 
                 alt="спортивное питание">`;
 
   $sliderImages.insertAdjacentHTML(position, elem);
 
 }
 
-function showProductDescription(idx) {
-  $productTitle.innerText = data[idx].name;
-  $productPrice.innerText = data[idx].price;
-  $productDescription.innerText = data[idx].description;
+function showProductDescription(id) {
+  $productTitle.innerText = data[id].name;
+  $productPrice.innerText = data[id].price;
+  $productDescription.innerText = data[id].description;
 
 }

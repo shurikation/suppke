@@ -1,13 +1,20 @@
-//import { InputQuantity } from "./js/components/inputQuantity.component";
-const { InputQuantity } = require('../src/js/components/inputQuantity.component');
+import { OrderInput } from "./js/components/order-input.component";
+import { OrderButton } from "./js/components/order-button.component";
 
-const inputQty = new InputQuantity (
+const orderInput = new OrderInput(
+    '.count-button__input',
     '.count-button__minus',
-    '.count-button__num',
     '.count-button__plus');
 
-console.log(inputQty);
-//
-// const $minus = document.querySelector('.count-button__minus');
-// const $inputNum = document.querySelector('.count-button__num');
-// const $plus = document.querySelector('.count-button__plus');
+const orderButton = new OrderButton(
+    '.add-to-card-button',
+    '.count-button__input',
+    '.chosen-product__img',
+    'data-id');
+
+
+
+
+
+
+
