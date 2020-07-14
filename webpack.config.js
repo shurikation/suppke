@@ -2,9 +2,12 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+
 module.exports = {
   mode: 'development',
-  entry: './index.js',
+  entry: {
+    main: ['@babel/polyfill','./index.js']
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -13,7 +16,23 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "./index.html"
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
-  context: path.resolve(__dirname, 'src')
+  context: path.resolve(__dirname, 'src'),
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env'
+            ]
+          }
+        }
+      }
+    ]
+  }
 };

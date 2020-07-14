@@ -14,7 +14,7 @@
   background-color: transparent;
   color: $grey;
   border: none;
-  padding: 10px 30px;
+  padding: 10px 20px;
   font-size: 14px;
 }
 
@@ -67,6 +67,7 @@
 
 .card__img {
   margin: 0 auto;
+  max-width: 80%;
 }
 
 .card__subtitle {

@@ -3,7 +3,7 @@ export class ChangesSlider {
     this.$imageBefore = document.querySelector(imgBefore);
     this.$inputRange = document.querySelector(inputRange);
     this.$inputContainer = document.querySelector(inputContainer);
-    console.log(this.$inputContainer);
+
     this.inputValueCounter = 0;
     this.elemWidthCounter = 100;
 
@@ -11,7 +11,7 @@ export class ChangesSlider {
   }
 
   init() {
-    console.log(this.$inputContainer);
+
     this.$inputContainer.addEventListener('click', (event) => {
       if (event.target.classList[0] === 'changes__button--after') this.valueHandler(1);
       if (event.target.classList[0] === 'changes__button--before') this.valueHandler(-1);

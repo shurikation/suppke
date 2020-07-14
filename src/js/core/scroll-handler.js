@@ -1,29 +1,33 @@
-const $promo = document.querySelector('.promo__img');
+import {headerFixed} from "../../index";
+import {factsCounter} from "../../index";
 
-window.addEventListener("scroll", throttleScroll);
-let isScrolling = false;
 
-function throttleScroll() {
-  if (isScrolling === false) {
-    window.requestAnimationFrame(function () {
-      isElemShouldBeShown();
-      isCountersShouldBeRunning();
-      isScrolling = false;
-    });
+export class ScrollHandler {
+  constructor() {
+    this.isScrolling = false;
+    this.init();
   }
-  isScrolling = true;
-}
 
-function isElemShouldBeShown() {
-  if (isBlockScrolledDown($promo)) {
-    $header.classList.add('header--fixed');
-  } else {
-    $header.classList.remove('header--fixed');
+  init() {
+    window.addEventListener("scroll", this.throttleScroll.bind(this));
   }
-}
 
-function isBlockScrolledDown($el) {
-  const elementBoundary = $el.getBoundingClientRect();
-  const bottom = elementBoundary.bottom;
-  return (bottom <= 200);
+  //to call 60 times in second / to avoid chatty of the scroll event
+  throttleScroll() {
+    if (this.isScrolling === false) {
+      window.requestAnimationFrame(() => {
+        headerFixed.isHeaderShouldBeShown();
+        factsCounter.isCountersShouldBeRunning();
+
+        this.isScrolling = false;
+      });
+    }
+    this.isScrolling = true;
+  }
+
+  static isElemScrolledDown($el) {
+    const elementBoundary = $el.getBoundingClientRect();
+    const bottom = elementBoundary.bottom;
+    return (bottom <= 200); //px
+  }
 }

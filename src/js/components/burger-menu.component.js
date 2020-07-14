@@ -1,11 +1,18 @@
-const $togglerWrapper = document.querySelector('.header__toggler-wrapper');
-const $menuToggler = document.querySelector('.header__menu-toggler');
-const $menu = document.querySelector('.menu');
-const $header = document.querySelector('.header');
+export class BurgerMenu {
+  constructor(props) {
+    this.props = props;
+    this.$togglerWrapper = document.querySelector(props.togglerWrapper);
+    this.$menuToggler = document.querySelector(props.menuToggler);
+    this.$menu = document.querySelector(props.menu);
+    this.$header = document.querySelector(props.header);
+    this.init();
+  }
 
-
-$togglerWrapper.addEventListener('click', function () {
-  $menuToggler.classList.toggle('toggler--active');
-  $menu.classList.toggle('menu--opened');
-  $header.classList.toggle('header--border-none');
-});
+  init() {
+    this.$togglerWrapper.addEventListener('click', () => {
+      this.$menuToggler.classList.toggle(this.props.active);
+      this.$menu.classList.toggle(this.props.open);
+      this.$header.classList.toggle(this.props.borderNone);
+    });
+  }
+}

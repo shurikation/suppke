@@ -1,35 +1,43 @@
-const animationTime = 300;
-const $buttonsParent = document.querySelector('.product-menu');
-const arrayOfCards = Array.from(document.querySelectorAll('.card'));
+import {AnimationDurationHandler} from "../core/animation-duration-handler";
 
-$buttonsParent.addEventListener('click', (event) => showCorrectCards(event));
+export class GalleryFilter {
+  constructor({varSelector, cssVarName, buttonsParent, card}) {
+    this.animationTime = AnimationDurationHandler.getDuration(varSelector, cssVarName);
+    this.$buttonsParent = document.querySelector(buttonsParent);
+    this.arrayOfCards = Array.from(document.querySelectorAll(card));
 
-function showCorrectCards(event) {
-  const currentFilter = event.target.dataset.type;
-  if (currentFilter === 'all') {
-    arrayOfCards.forEach(card => {
-      card.classList.remove('collapse', 'smoothlyHide');
-      card.classList.add('smoothlyShow');
-      // console.log(card.getAttribute('data-type'));
-    });
-    return;
+    this.init();
   }
 
-  const filteredInvisibleCards = arrayOfCards.filter(card => card.dataset.type !== currentFilter);
-  const filteredVisibleCards = arrayOfCards.filter(card => card.dataset.type === currentFilter);
+  init() {
+    this.$buttonsParent.addEventListener('click', (event) => this.showCorrectCards(event));
+  }
 
-  filteredInvisibleCards.forEach(card => {
-    card.classList.remove('smoothlyShow');
-    card.classList.add('smoothlyHide');
-    card.style.animationDuration = animationTime.toString() + 'ms';
-    setTimeout(() => card.classList.add('collapse'), animationTime);
+  showCorrectCards(event) {
+    const currentFilter = event.target.dataset.type;
+    if (currentFilter === 'all') {
+      this.arrayOfCards.forEach(card => {
+        card.classList.remove('collapse', 'smoothlyHide');
+        card.classList.add('smoothlyShow');
+      });
+      return;
+    }
 
-  });
+    const filteredInvisibleCards = this.arrayOfCards.filter(card => card.dataset.type !== currentFilter);
+    const filteredVisibleCards = this.arrayOfCards.filter(card => card.dataset.type === currentFilter);
 
-  filteredVisibleCards.forEach(card => {
-    card.classList.remove('smoothlyHide');
-    card.classList.add('smoothlyShow');
-    card.style.animationDuration = animationTime.toString() + 'ms';
-    setTimeout(() => card.classList.remove('collapse'), animationTime);
-  });
+    filteredInvisibleCards.forEach(card => {
+      card.classList.remove('smoothlyShow');
+      card.classList.add('smoothlyHide');
+      card.style.animationDuration = this.animationTime.toString() + 'ms';
+      setTimeout(() => card.classList.add('collapse'), this.animationTime);
+    });
+
+    filteredVisibleCards.forEach(card => {
+      card.classList.remove('smoothlyHide');
+      card.classList.add('smoothlyShow');
+      card.style.animationDuration = this.animationTime.toString() + 'ms';
+      setTimeout(() => card.classList.remove('collapse'), this.animationTime);
+    });
+  }
 }

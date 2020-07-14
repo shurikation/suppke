@@ -17,9 +17,9 @@
   &::-ms-track {
     width: 100%;
     cursor: pointer;
-    background: transparent;
     border-color: transparent;
     color: transparent;
+    background-color: $grey-bar;
   }
 }
 
@@ -46,14 +46,26 @@
   margin-top: 2px;
   cursor: pointer;
 }
-.slider-control::-ms-thumb {
-  width: 35px;
-  height: 8px;
+
+_:-ms-fullscreen, :root .slider-control {
+  padding: 0;
+  width: 200px;
+  height: 65px;
   border-radius: 10px;
-  background-color: $green;
+  background-color: transparent;
   box-shadow: none;
   border: 0;
   margin-top: 2px;
+  cursor: pointer;
+}
+
+.slider-control::-ms-thumb{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $blue;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border: 10px solid white;
   cursor: pointer;
 }
 
@@ -63,7 +75,7 @@
   height: 14px;
   border-radius: 10px;
   background-color: white;
-  border: 1px solid $grey;
+  border: 1px solid $grey-bar;
   padding: 0 5px;
 }
 
@@ -77,11 +89,10 @@
 .slider-control::-ms-track{
   width: 100%;
   cursor: pointer;
-  background: transparent;
+  background-color: transparent;
   border-color: transparent;
   color: transparent;
 }
-
 
 @media (min-width: 576px){
   .slider-control {
@@ -123,10 +134,10 @@
     cursor: pointer;
   }
   .slider-control::-ms-thumb{
-    width: 34px;
-    height: 34px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    background-color: $green;
+    background-color: $blue;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     border: 13px solid white;
     cursor: pointer;
@@ -150,6 +161,7 @@
     padding: 0;
     border: none;
   }
+
   .slider-control::-ms-track{
     width: 428px;
     height: 6px;
@@ -162,28 +174,44 @@
 
 @media (min-width: 768px) {
   .slider-control {
-    min-width: 400px;
+    width: 400px;
     &::-ms-track {
-      min-width: 400px;
+      width: 400px;
     }
+  }
+
+  _:-ms-fullscreen, :root .slider-control {
+    height: 68px;
+    width: 320px;
   }
 }
 
 @media (min-width: 992px) {
   .slider-control {
-    min-width: 450px;
+    width: 450px;
     &::-ms-track {
-      min-width: 450px;
+      width: 450px;
     }
+  }
+
+  _:-ms-fullscreen, :root .slider-control {
+    height: 68px;
+    width: 370px;
   }
 }
 
 @media (min-width: 1200px) {
   .slider-control {
-    min-width: 500px;
+    width: 500px;
     &::-ms-track {
-      min-width: 500px;
+      width: 500px;
     }
+  }
+
+  //IE 11
+  _:-ms-fullscreen, :root .slider-control {
+    height: 68px;
+    width: 420px;
   }
 }
 

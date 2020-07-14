@@ -1,9 +1,9 @@
 export class OrderInput {
-  constructor(input, minus, plus) {
-    this.$input = document.querySelector(input);
-    this.$minus = document.querySelector(minus);
-    this.$plus = document.querySelector(plus);
-    this.counter = parseInt(this.$input.value);
+  constructor(props) {
+    this.$input = document.querySelector(props.input);
+    this.$minus = document.querySelector(props.minus);
+    this.$plus = document.querySelector(props.plus);
+
     this.init();
   }
 
@@ -13,11 +13,11 @@ export class OrderInput {
   }
 
   goodsQuantityCounter(toggler) {
-    this.counter -= toggler;
-    if(this.counter <= 0) {
-      this.counter = 0;
+    let counter = parseInt(this.$input.value);
+    counter -= toggler;
+    if(counter <= 0) {
+      counter = 0;
     }
-    this.$input.value = this.counter.toString();
-    console.log(this.$input.value);
+    this.$input.value = counter.toString();
   }
 }

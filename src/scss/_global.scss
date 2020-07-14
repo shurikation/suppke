@@ -2,10 +2,15 @@
 
 :root {
   box-sizing: border-box;
+  --smoothly-anims-duration: 200ms;
 }
 
 *::after, *::before {
   box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,6 +20,24 @@ body {
   font-size: 16px;
   min-width: 320px;
   overflow-x: hidden;
+  //Footer to bottom
+  display: flex;
+  flex-direction: column;
+
+}
+
+main {
+  //Footer to bottom
+  flex: 1 0 auto;
+}
+
+.footer {
+  //Footer to bottom
+  flex-shrink: 0;
+}
+
+html, body {
+  height: 100%;
 }
 
 h1,h2,h3,h4,h5,h6,p {
@@ -43,11 +66,14 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
 input[type=number] {
   -moz-appearance:textfield;
 }
 
+input[type=email],
+textarea {
+  box-sizing: border-box;
+}
 
 .container {
   padding: 0 15px;
@@ -57,7 +83,7 @@ input[type=number] {
 .button {
   background-color: $green;
   color: #fff;
-  border: 2px solid $green;
+  border: 2px solid;
   padding: 16px 40px;
   text-transform: uppercase;
   font-weight: 700;
@@ -91,6 +117,7 @@ input[type=number] {
 }
 
 .section-subtitle {
+  line-height: 1.1em;
   color: $grey;
   text-align: center;
 }
@@ -116,6 +143,11 @@ input[type=number] {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
+}
+
+
+.collapse {
+  display: none !important;
 }
 
 @media (min-width: 576px) {

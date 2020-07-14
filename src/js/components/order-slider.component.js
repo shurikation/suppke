@@ -1,4 +1,4 @@
-import {AnimationDurationHandler} from "./core/animation-duration-handler";
+import {AnimationDurationHandler} from "../core/animation-duration-handler";
 
 export class OrderSlider {
   constructor(props) {
@@ -18,7 +18,7 @@ export class OrderSlider {
   init() {
     this.$arrowLeft.addEventListener('click', () => this.leftArrowClickHandler());
     this.$arrowRight.addEventListener('click', () => this.rightArrowClickHandler());
-    this.$images.addEventListener('click', () => this.imageClickHandler());
+    this.$images.addEventListener('click', (event) => this.imageClickHandler(event));
     this.getData();
   }
 
@@ -61,16 +61,14 @@ export class OrderSlider {
       this.addImageToSlider(idOfNextBlock, 'beforeEnd');
     }, this.animationDuration);
 
+    this.dispatchResetProductQty();
 
-    if (+this.$input.value > 0) {
-      this.dispatchResetProductQty();
-    }
   }
 
   rightArrowClickHandler() {
     this.$images.lastElementChild.classList.add('smoothlyHide');
-    setTimeout(() => {
 
+    setTimeout(() => {
       let idOfPrevBlock = this.getElemID(this.$images.firstElementChild) - 1;
 
       if (idOfPrevBlock < 0) idOfPrevBlock = this.maxIDValueOfProducts;
@@ -78,21 +76,22 @@ export class OrderSlider {
       this.$images.lastElementChild.remove();
       this.displayChosenImage(this.$images.lastElementChild);
       this.addImageToSlider(idOfPrevBlock, 'afterBegin');
-
     }, this.animationDuration);
 
-    //if intput.value > 0 => вызови эту функцию:
     this.dispatchResetProductQty();
-    //OrderButton.prototype.resetEnteredProductQty();
+
   }
 
   dispatchResetProductQty() {
-    this.$input.dispatchEvent(new CustomEvent('reset-qty'));
+    if (+this.$input.value > 0) {
+      this.$input.dispatchEvent(new CustomEvent('reset-qty'));
+    }
   }
 
   imageClickHandler(event) {
     if (event.target.tagName !== 'IMG') return false;
     this.displayChosenImage(event.target);
+    this.dispatchResetProductQty();
   }
 
   displayChosenImage($image) {
@@ -103,7 +102,6 @@ export class OrderSlider {
     const $imageClone = $image.cloneNode(true);
     $imageClone.className = 'chosen-product__img smoothlyShow';
     this.$chosenImage.insertAdjacentElement('afterBegin', $imageClone);
-
     this.dispatchProductData($image.getAttribute('data-id'));
   }
 
@@ -124,9 +122,7 @@ export class OrderSlider {
     const productData = this.products[id];
     document.querySelector('.order__product-info')
         .dispatchEvent(new CustomEvent('get-product-id', {
-          detail: {
-            product: productData
-          }
+          detail: { product: productData }
         }));
   }
 }
