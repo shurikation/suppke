@@ -1,4 +1,4 @@
-import {AnimationDurationHandler} from "../core/animation-duration-handler";
+import {AnimationDurationHandler} from "../misc/animation-duration-handler";
 
 export class OrderSlider {
   constructor(props) {

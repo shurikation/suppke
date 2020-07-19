@@ -1,22 +1,24 @@
 'use strict';
+
 import {OrderInput} from "./js/components/order-input.component";
 import {OrderButton} from "./js/components/order-button.component";
 import {Cart} from "./js/components/cart.component";
 import {BurgerMenu} from "./js/components/burger-menu.component";
 import {FactCounters} from "./js/components/facts-counter.component";
-import {ScrollHandler} from "./js/core/scroll-handler";
+import {ScrollHandler} from "./js/misc/scroll-handler";
 import { HeaderFixed } from "./js/components/header-fixed-anim.component";
 import { GalleryFilter } from "./js/components/gallery-filter.component";
 import { ChangesSlider } from "./js/components/changes-slider.component";
 import {OrderSlider} from "./js/components/order-slider.component";
 import {OrderProductInfo} from "./js/components/order-product-info.component";
-
+import {Form} from "./js/components/form.component";
 
 const orderInput = new OrderInput({
   input: '.count-button__input',
   minus: '.count-button__minus',
   plus: '.count-button__plus'
 });
+
 const orderButton = new OrderButton({
   orderButton: '.add-to-card-button',
   inputQty: '.count-button__input',
@@ -25,6 +27,7 @@ const orderButton = new OrderButton({
   shopCart: '.shop-cart',
   warningMessage: '.count-button__warning'
 });
+
 const burgerMenu = new BurgerMenu({
   togglerWrapper: '.header__toggler-wrapper',
   menuToggler: '.header__menu-toggler',
@@ -35,6 +38,7 @@ const burgerMenu = new BurgerMenu({
   borderNone: 'header--border-none'
 });
 const scrollHandler = new ScrollHandler();
+
 export const factsCounter = new FactCounters({
   startingBlock: '.gallery',
   settings: [
@@ -64,21 +68,25 @@ export const factsCounter = new FactCounters({
     }
   ]
 });
+
 export const headerFixed = new HeaderFixed({
   header: '.header',
   startingBlock: '.promo'
 });
+
 const galleryFilter = new GalleryFilter({
   varSelector: ':root',
   cssVarName: '--smoothly-anims-duration',
   buttonsParent: '.product-menu',
   card: '.card'
 });
+
 const changesSlider = new ChangesSlider({
   imgBefore: '.changes__image-wrapper--before',
   inputRange: '.slider-control',
   inputContainer: '.changes__slider-container'
 });
+
 const orderSlider = new OrderSlider({
   arrowLeft: '.product-slider__arrow--left',
   arrowRight: '.product-slider__arrow--right',
@@ -86,6 +94,7 @@ const orderSlider = new OrderSlider({
   chosenImage: '.product-slider__chosen-product',
   input: '.count-button__input'
 });
+
 const orderProductInfo = new OrderProductInfo({
   product: '.order__product-info',
   title: '.product-info__title',
@@ -94,9 +103,26 @@ const orderProductInfo = new OrderProductInfo({
   description: '.product-info__description'
 });
 
+const cart = new Cart({
+  cart: '.shop-cart',
+  cartIcon: '.shop-cart-icon',
+  closeCart: '.shop-cart__close-cart',
+  cartWrapper: '.shop-cart__products-wrapper',
+  total: '.shop-cart__total-price > span',
+  cartIconValue: '.shop-cart__value',
+  cartOrderWrapper: '.shop-cart__order-wrapper',
+  cartButton: '.shop-cart__button',
+  successMessage: '.shop-cart__success-message',
+  cartEmptyMessage: '.shop-cart__empty-message',
+  cartBody: '.shop-cart__body'
+});
 
-const cart = new Cart();
 
+const form = new Form({
+  email: '.form__email',
+  text: '.form__text',
+  button: '.form__button'
+});
 
 
 

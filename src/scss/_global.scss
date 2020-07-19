@@ -145,6 +145,22 @@ textarea {
   }
 }
 
+.warning {
+  position: absolute;
+  background: #c83129;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.5em;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: inherit;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: rotate(45deg);
+  }
+}
 
 .collapse {
   display: none !important;

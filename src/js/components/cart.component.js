@@ -1,18 +1,16 @@
 export class Cart {
-  constructor() {
-    this.$cart = document.querySelector('.shop-cart');
-    this.$cartIcon = document.querySelector('.shop-cart-icon');
-    this.$closeCart = document.querySelector('.shop-cart__close-cart');
-    this.$cartWrapper = document.querySelector('.shop-card__products-wrapper');
-    this.$total = document.querySelector('.shop-card__total-price > span');
-    //this.$cartProduct = document.querySelectorAll('.shop-cart__cart-product');
-    this.$cartIconValue = document.querySelector('.shop-cart__value');
-    this.$cartOrderWrapper = document.querySelector('.shop-card__order-wrapper');
-    this.$cartButton = document.querySelector('.shop-cart__button');
-    this.$successMessage = document.querySelector('.shop-cart__success-message');
-    this.$cartEmptyMessage = document.querySelector('.shop-card__empty-message');
-    this.$cartBody = document.querySelector('.shop-cart__body');
-
+  constructor(props) {
+    this.$cart = document.querySelector(props.cart);
+    this.$cartIcon = document.querySelector(props.cartIcon);
+    this.$closeCart = document.querySelector(props.closeCart);
+    this.$cartWrapper = document.querySelector(props.cartWrapper);
+    this.$total = document.querySelector(props.total);
+    this.$cartIconValue = document.querySelector(props.cartIconValue);
+    this.$cartOrderWrapper = document.querySelector(props.cartOrderWrapper);
+    this.$cartButton = document.querySelector(props.cartButton);
+    this.$successMessage = document.querySelector(props.successMessage);
+    this.$cartEmptyMessage = document.querySelector(props.cartEmptyMessage);
+    this.$cartBody = document.querySelector(props.cartBody);
     this.products = null;
     this.currentProduct = null;
     this.totalAmount = null;

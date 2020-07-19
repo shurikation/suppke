@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <title>Suppke | Магазин спортивного питания</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="scss/normalize.css">
     <link rel="stylesheet" href="scss/style.css">
 </head>
 <body>
@@ -303,11 +302,11 @@
             <div class="example__changes changes">
                 <picture class="changes__image-wrapper--before">
                     <source media="(min-width: 992px)" srcset="images/example/before.png">
-                    <img class='changes__image--before' src="images/example/before-mobile.png" alt="толстый кот">
+                    <img class='changes__image--before' src="images/example/before-mobile.png" alt="толстый человек">
                 </picture>
                 <picture class="changes__image-wrapper--after">
                     <source media="(min-width: 992px)" srcset="images/example/after.png">
-                    <img class='changes__image--after' src="images/example/after-mobile.png" alt="худой кот">
+                    <img class='changes__image--after' src="images/example/after-mobile.png" alt="худой человек">
                 </picture>
             </div>
             <div class="changes__slider-container">
@@ -349,7 +348,7 @@
                             <button class="count-button__minus">-</button>
                             <input class="count-button__input" type="number" value="0" disabled>
                             <button class="count-button__plus">+</button>
-                            <p class="count-button__warning collapse">Укажите количество товара!</p>
+                            <p class="count-button__warning warning collapse">Укажите количество товара!</p>
                         </div>
                         <button class="add-to-card-button button">Добавить в корзину</button>
                     </div>
@@ -365,15 +364,15 @@
                 <div class="shop-cart__close-cart">&#10006;</div>
             </div>
             <div class="bar"></div>
-            <div class="shop-card__products-wrapper">
+            <div class="shop-cart__products-wrapper">
             </div>
-            <div class="shop-card__order-wrapper">
-                <div class="shop-card__total-price">
+            <div class="shop-cart__order-wrapper">
+                <div class="shop-cart__total-price">
                     Итого: <span>0</span>&#8381;
                 </div>
                 <button class="shop-cart__button button" type="submit">Заказать!</button>
             </div>
-            <p class="shop-card__empty-message">Ваша корзина пуста...</p>
+            <p class="shop-cart__empty-message">Ваша корзина пуста...</p>
         </div>
         <div class="shop-cart__success-message shop-cart__body collapse">
             <p class="success-message__text">Ваша заявка успешно отправлена!</p>
@@ -486,9 +485,10 @@
                     </a>
                 </div>
             </div>
-            <div class="footer__form" id="contacts">
+            <div class="footer__form-wrapper" id="contacts">
                 <h4 class="form__title">Напишите нам!</h4>
-                <form action="#">
+                <form class="footer__form" action="#">
+                    <p class="form__warning warning">Укажите количество товара!</p>
                     <input class="form__email" type="email" placeholder="Ваш email">
                     <textarea class="form__text" name="message" placeholder="Текст сообщения..."></textarea>
                     <button class="button form__button" type="submit">Отправить</button>
@@ -500,43 +500,7 @@
         </p>
     </div>
 </footer>
-<!--&#45;&#45;breakpoint-xs: 0;-->
-<!--&#45;&#45;breakpoint-sm: 576px;-->
-<!--&#45;&#45;breakpoint-md: 768px;-->
-<!--&#45;&#45;breakpoint-lg: 992px;-->
-<!--&#45;&#45;breakpoint-xl: 1200px;-->
 <script src="../dist/bundle.js"></script>
-<script>
-
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      width: 1280,
-      height: 720,
-      videoId: 'vBF2sndWtHo'
-    });
-  }
-
-
-  var $videoButton = document.querySelector('.video-area__play-button');
-
-  $videoButton.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    var $videoWrapper = document.querySelector('.video__body-wrapper');
-    $videoWrapper.classList.remove('collapse');
-
-    $videoWrapper.addEventListener('click', () => {
-      $videoWrapper.classList.add('collapse');
-      player.pauseVideo();
-    });
-  });
-
-</script>
-
+<script src="js/misc/video.youtube.js"></script>
 </body>
 </html>

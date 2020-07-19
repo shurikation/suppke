@@ -78,8 +78,18 @@
   stop-color: #7024C4;
 }
 
-.footer__form {
+.footer__form-wrapper {
   margin-top: 25px;
+}
+
+.footer__form {
+  position: relative;
+}
+
+.form__warning {
+  &::before {
+    bottom: -3px;
+  }
 }
 
 .form__title {
@@ -135,6 +145,8 @@
     margin-top: 33px;
   }
 }
+
+
 
 
 

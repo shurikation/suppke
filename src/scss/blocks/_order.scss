@@ -83,23 +83,18 @@
   position: relative;;
 }
 
+
+
 .count-button__warning {
-  position: absolute;
   min-width: 216px;
-  left: -53px;
-  bottom: 3.5em;
-  background: #c83129;
-  color: #fff;
-  padding: 0.5em;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  left: -56px;
+  bottom: 3.6em;
+  &::before {
+    left: 50%;
+    bottom: -3px;
+  }
 }
 
-
-
-//.warning {
-//  opacity: 1;
-//  bottom: 3.5em;
-//}
 
 
 

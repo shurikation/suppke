@@ -53,6 +53,9 @@
   font-weight: 700;
   color: $blue;
   padding: 1%;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .cart-product__total-item-price {
@@ -64,25 +67,28 @@
   font-weight: 700;
   color: $blue;
   padding: 1%;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.shop-card__total-price {
+.shop-cart__total-item-price {
   margin-top: 15px;
 }
 
 .cart-product__total-item-price > span,
-.shop-card__total-price > span {
+.shop-cart__total-item-price > span {
   padding: 5px;
 }
 
 .cart-product__qty,
 .cart-product__total-item-price,
-.shop-card__total-price {
+.shop-cart__total-price {
   color: $green;
   font-weight: 700;
 }
 
-.shop-card__order-wrapper {
+.shop-cart__order-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,6 +96,11 @@
 
 .success-message__img {
   max-width: 25%;
+  margin-top: 30px;
+}
+
+.success-message__text {
+  text-align: center;
 }
 
 .shop-cart__success-message {
@@ -109,11 +120,15 @@
   font-size: 25px;
 }
 
+.shop-cart__empty-message {
+  font-size: 18px;
+}
 
 @media (min-width: 576px) {
   .cart-product__name {
     display: block;
   }
+
 }
 
 @media (min-width: 768px) {
@@ -122,28 +137,36 @@
     width: 90%;
   }
 
-  .cart-product__name,
-  .cart-product__qty,
-  .cart-product__total-item-price,
-  .shop-card__total-price {
-    font-size: 18px;
+  .shop-cart__cart-product,
+  .shop-cart__total-price,
+  .shop-cart__empty-message,
+  .success-message__text {
+    font-size: 20px;
   }
 
   .shop-cart__title {
     font-size: 26px;
   }
+
+  .shop-cart__success-message {
+    width: 60%;
+  }
+
+  .success-message__img {
+    max-width: 20%;
+  }
 }
 
 @media (min-width: 1200px) {
-  .cart-product__name,
-  .cart-product__qty,
-  .cart-product__total-item-price,
-  .shop-card__total-price {
-    font-size: 22px;
+  .shop-cart__cart-product,
+  .shop-cart__total-price,
+  .shop-cart__empty-message,
+  .success-message__text {
+    font-size: 26px;
   }
 
   .shop-cart__title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .shop-cart__body {
@@ -160,6 +183,14 @@
 
   .cart-product__image {
     max-width: 10%;
+  }
+
+  .shop-cart__success-message {
+    width: 40%;
+  }
+
+  .success-message__img {
+    max-width: 20%;
   }
 
 }
