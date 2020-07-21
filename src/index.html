@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="scss/style.css">
 </head>
 <body>
+<div class="preloader">
+    <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+    </div>
+</div>
 <header class="header">
     <div class="container">
         <div class="header__wrapper">
@@ -46,17 +52,17 @@
     <section class="promo main__promo">
         <div class="container">
             <div class="promo__wrapper">
-                <img class="promo__img fadeInRight" src="images/promo/promo-product.png" alt="спортивное питание">
+                <img class="promo__img" src="images/promo/promo-product.png" alt="спортивное питание">
                 <div class="promo__info-wrapper">
                     <div class="promo__description">
-                        <h3 class="promo__title fadeInUp">Протеин <span>премиум-класса</span> &laquo;Suppke
+                        <h3 class="promo__title">Протеин <span>премиум-класса</span> &laquo;Suppke
                             Protein&raquo;</h3>
-                        <p class="promo__subtitle fadeInUp">Изготовлен по новейшим технологиям на современном
+                        <p class="promo__subtitle">Изготовлен по новейшим технологиям на современном
                             оборудовании из
                             выскокачественного сырья</p>
                     </div>
                     <div class="promo__buttons">
-                        <a class="promo__button-buy button fadeInLeft" href="#order">Заказать</a>
+                        <a class="promo__button-buy button" href="#order">Заказать</a>
                     </div>
                 </div>
             </div>
@@ -186,7 +192,7 @@
         </div>
     </section>
     <div class="video__body-wrapper collapse">
-        <div class="cross">&#10006;</div>
+        <div class="cross">&#10005;</div>
         <div class="video__body" id="player">
         </div>
     </div>
@@ -357,11 +363,11 @@
         </div>
     </section>
     <!-- CART-->
-    <div class="shop-cart collapse">
-        <div class="shop-cart__body ">
+    <div class="shop-cart overlay-wrapper collapse">
+        <div class="shop-cart__body overlay">
             <div class="shop-cart__info-wrapper">
                 <div class="shop-cart__title">Корзина</div>
-                <div class="shop-cart__close-cart">&#10006;</div>
+                <div class="shop-cart__close-cart">&#10005;</div>
             </div>
             <div class="bar"></div>
             <div class="shop-cart__products-wrapper">
@@ -374,7 +380,7 @@
             </div>
             <p class="shop-cart__empty-message">Ваша корзина пуста...</p>
         </div>
-        <div class="shop-cart__success-message shop-cart__body collapse">
+        <div class="shop-cart__success-message success-message overlay collapse">
             <p class="success-message__text">Ваша заявка успешно отправлена!</p>
             <img class="success-message__img" src="images/cart/success.svg" alt="success">
         </div>
@@ -488,7 +494,7 @@
             <div class="footer__form-wrapper" id="contacts">
                 <h4 class="form__title">Напишите нам!</h4>
                 <form class="footer__form" action="#">
-                    <p class="form__warning warning">Укажите количество товара!</p>
+                    <p class="form__warning warning collapse">Укажите ваш e-mail!</p>
                     <input class="form__email" type="email" placeholder="Ваш email">
                     <textarea class="form__text" name="message" placeholder="Текст сообщения..."></textarea>
                     <button class="button form__button" type="submit">Отправить</button>
@@ -499,7 +505,14 @@
             Copyright&copy;&nbsp;<span>Suppke</span>&nbsp;| Все права защищены
         </p>
     </div>
+    <div class="footer__success-message-wrapper overlay-wrapper collapse">
+        <div class="footer__success-message success-message overlay">
+            <p class="success-message__text">Ваше сообщение отправлено!</p>
+            <img class="success-message__img" src="images/cart/success.svg" alt="success">
+        </div>
+    </div>
 </footer>
+<script src="js/misc/preloader.js"></script>
 <script src="../dist/bundle.js"></script>
 <script src="js/misc/video.youtube.js"></script>
 </body>
