@@ -53,9 +53,9 @@
 
   .promo__img {
     max-width: 48%;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
-    animation-delay: .9s;
+    animation-delay: .6s;
   }
 
   .promo__title,
@@ -65,15 +65,15 @@
 
   .promo__title {
     font-size: 34px;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
-    animation-delay: 1.2s;
+    animation-delay: 0.2s;
   }
 
   .promo__subtitle {
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
-    animation-delay: 1.5s;
+    animation-delay: 0.4s;
   }
 
   .promo__buttons {
@@ -81,9 +81,9 @@
   }
 
   .promo__button-buy {
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
-    animation-delay: 1.7s;
+    animation-delay: -0.6s;
   }
 }
 

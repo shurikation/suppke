@@ -94,6 +94,7 @@ _:-ms-fullscreen, :root .slider-control {
   color: transparent;
 }
 
+
 @media (min-width: 576px){
   .slider-control {
     min-width: 300px;
@@ -164,11 +165,18 @@ _:-ms-fullscreen, :root .slider-control {
 
   .slider-control::-ms-track{
     width: 428px;
-    height: 6px;
+    height: 15px;
     border-radius: 3px;
     background-color: $grey-bar;
     padding: 0;
     border: none;
+  }
+
+  @supports (-ms-ime-align:auto) {
+    .slider-control::-ms-track {
+      background-color: transparent;
+      height: 40px;
+    }
   }
 }
 
@@ -205,12 +213,20 @@ _:-ms-fullscreen, :root .slider-control {
     width: 500px;
     &::-ms-track {
       width: 500px;
+      height: 5px;
     }
   }
 
+  @supports (-ms-ime-align:auto) {
+    .slider-control::-ms-track {
+      height: 45px;
+    }
+  }
+
+
   //IE 11
   _:-ms-fullscreen, :root .slider-control {
-    height: 68px;
+    height: 78px;
     width: 420px;
   }
 }

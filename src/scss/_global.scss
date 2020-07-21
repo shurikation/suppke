@@ -2,7 +2,7 @@
 
 :root {
   box-sizing: border-box;
-  --smoothly-anims-duration: 200ms;
+  --smoothly-anims-duration: 300ms;
 }
 
 *::after, *::before {
@@ -157,14 +157,55 @@ textarea {
     width: 10px;
     height: 10px;
     background-color: inherit;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     transform: rotate(45deg);
+  }
+}
+
+.overlay-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  min-height: 200px;
+  max-height: 640px;
+  background-color: #fff;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 5px;
+  overflow: auto;
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 85%;
+  min-height: 190px;
+  &__img {
+    max-width: 25%;
+    margin-top: 30px;
+  }
+  &__text {
+    text-align: center;
   }
 }
 
 .collapse {
   display: none !important;
 }
+
+//.hidden {
+//  visibility: hidden;
+//}
 
 @media (min-width: 576px) {
   .container {
@@ -176,6 +217,23 @@ textarea {
   .container {
     max-width: 720px;
     padding: 0 30px;
+  }
+
+  .overlay {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .success-message {
+    width: 60%;
+  }
+
+  .success-message__text {
+    font-size: 20px;
+  }
+
+  .success-message__img {
+    max-width: 20%;
   }
 }
 
@@ -189,5 +247,19 @@ textarea {
 @media (min-width: 1200px) {
   .container {
     max-width: 1300px;
+  }
+
+  .overlay {
+    padding: 25px;
+  }
+
+  .success-message {
+    width: 40%;
+    &__img {
+      max-width: 20%;
+    }
+    &__text {
+      font-size: 26px;
+    }
   }
 }

@@ -32,12 +32,18 @@
 .product-slider__img {
   max-width: 30%;
   margin: 2% 2% 0 2%;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .product-slider__arrow--right,
 .product-slider__arrow--left {
   width: 25px;
   height: 29px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .order__product-info {
@@ -83,8 +89,6 @@
   position: relative;;
 }
 
-
-
 .count-button__warning {
   min-width: 216px;
   left: -56px;
@@ -95,9 +99,6 @@
   }
 }
 
-
-
-
 .count-button__minus {
   border: 2px solid $green;
   color: $green;
@@ -107,6 +108,9 @@
   width: 42px;
   height: 51px;
   outline: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .count-button__plus {
@@ -118,6 +122,9 @@
   width: 42px;
   height: 51px;
   outline: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .count-button__input {
@@ -181,6 +188,18 @@
 
   .product-info__description {
     min-height: 215px;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .count-button__input {
+    background-color: transparent;
+  }
+
+  .product-slider__arrow--left,
+  .product-slider__arrow--right {
+    width: 40px;
+    height: 40px;
   }
 }
 
