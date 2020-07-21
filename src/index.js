@@ -1,17 +1,20 @@
 'use strict';
 
+import {AnimationHandler} from "./js/misc/animation-handler";
+import {ScrollHandler} from "./js/misc/scroll-handler";
+import {BurgerMenu} from "./js/components/burger-menu.component";
+import {HeaderFixed} from "./js/components/header-fixed-anim.component";
+import {FactCounters} from "./js/components/facts-counter.component";
+import {GalleryFilter} from "./js/components/gallery-filter.component";
+import {ChangesSlider} from "./js/components/changes-slider.component";
 import {OrderInput} from "./js/components/order-input.component";
 import {OrderButton} from "./js/components/order-button.component";
 import {Cart} from "./js/components/cart.component";
-import {BurgerMenu} from "./js/components/burger-menu.component";
-import {FactCounters} from "./js/components/facts-counter.component";
-import {ScrollHandler} from "./js/misc/scroll-handler";
-import { HeaderFixed } from "./js/components/header-fixed-anim.component";
-import { GalleryFilter } from "./js/components/gallery-filter.component";
-import { ChangesSlider } from "./js/components/changes-slider.component";
 import {OrderSlider} from "./js/components/order-slider.component";
 import {OrderProductInfo} from "./js/components/order-product-info.component";
 import {Form} from "./js/components/form.component";
+
+const animationHandler = new AnimationHandler();
 
 const orderInput = new OrderInput({
   input: '.count-button__input',
@@ -117,11 +120,11 @@ const cart = new Cart({
   cartBody: '.shop-cart__body'
 });
 
-
 const form = new Form({
   email: '.form__email',
   text: '.form__text',
-  button: '.form__button'
+  button: '.form__button',
+  warning: '.form__warning'
 });
 
 
