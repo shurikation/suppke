@@ -1,8 +1,8 @@
-import {AnimationDurationHandler} from "../misc/animation-duration-handler";
+import {AnimationHandler} from "../misc/animation-handler";
 
 export class GalleryFilter {
   constructor({varSelector, cssVarName, buttonsParent, card}) {
-    this.animationTime = AnimationDurationHandler.getDuration(varSelector, cssVarName);
+    this.animationTime = AnimationHandler.getDuration(varSelector, cssVarName);
     this.$buttonsParent = document.querySelector(buttonsParent);
     this.arrayOfCards = Array.from(document.querySelectorAll(card));
 

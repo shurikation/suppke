@@ -6,9 +6,9 @@ export class OrderButton {
     this.product = props.currentProduct;
     this.dataID = props.dataID;
     this.$shopCart = document.querySelector(props.shopCart);
-    this.$countButtonWarning = document.querySelector(props.warningMessage);
+    this.$warning = document.querySelector(props.warningMessage);
 
-    this.warningIsShown = false;
+    this.isWarningShown = false;
     this.init();
   }
 
@@ -22,7 +22,7 @@ export class OrderButton {
     const id = $currentProduct.getAttribute(this.dataID);
     const qty = this.$inputQty.value;
 
-    if (qty > 0 && this.warningIsShown) this.hideWarningMessage();
+    if (qty > 0 && this.isWarningShown) this.hideWarningMessage();
 
     (qty <= 0)
         ? this.showWarningMessage()
@@ -32,16 +32,15 @@ export class OrderButton {
   }
 
   showWarningMessage() {
-    this.$countButtonWarning.classList.remove('collapse');
-    this.$countButtonWarning.classList.add('smoothlyShow');
-    this.warningIsShown = true;
+    this.$warning.classList.remove('collapse');
+    this.$warning.classList.add('smoothlyShow');
+    this.isWarningShown = true;
   }
 
   hideWarningMessage() {
-    this.$countButtonWarning.classList.remove('smoothlyShow');
-    this.$countButtonWarning.classList.add('smoothlyHide');
-    setTimeout(() => this.$countButtonWarning.classList.add('collapse'), 150);
-    this.warningIsShown = false;
+    this.$warning.classList.remove('smoothlyShow');
+    this.$warning.classList.add('collapse');
+    this.isWarningShown = false;
   }
 
   resetEnteredProductQty() {

@@ -1,8 +1,15 @@
 export class Form {
-  constructor({email, text, button}) {
+  constructor({email, text, button, warning}) {
     this.$email = document.querySelector(email);
     this.$text = document.querySelector(text);
     this.$button = document.querySelector(button);
+    this.$warning = document.querySelector(warning);
+    this.$success = document.querySelector('.footer__success-message-wrapper');
+    this.$title = document.querySelector('.form__title');
+
+
+    this.isWarningShown = false;
+
     this.formData = {
       email: '',
       text: ''
@@ -15,13 +22,16 @@ export class Form {
       event.preventDefault();
       this.getInputsValue();
 
+
+      if(this.isWarningShown) this.hideWarningMessage();
+
+
       if (this.validateEmail(this.formData.email)) {
-        this.fetchUserMessage();
+        this.sendUserMessage();
       } else {
-        this.showFailureMessage();
+        this.showWarning();
+        this.isWarningShown = true;
       }
-
-
     })
   }
 
@@ -35,7 +45,7 @@ export class Form {
     return regExp.test(email);
   }
 
-  fetchUserMessage() {
+  sendUserMessage() {
     fetch('http://httpbin.org/post', {
       method: 'POST',
       headers: {
@@ -51,13 +61,27 @@ export class Form {
   }
 
   showSuccessMessage() {
-    console.log('Ваше сообщение отправлено!');
+    this.clear();
+    this.$success.classList.remove('collapse');
+    setTimeout(() => {
+      this.$success.classList.add('collapse');
+    }, 4000);
   }
 
-  showFailureMessage() {
-    console.log('Введите нормальный емэйл бля!!!!11');
+  showWarning() {
+    this.$warning.classList.remove('collapse');
+    this.$warning.classList.add('smoothlyShow');
+    this.isWarningShown = true;
   }
 
+  hideWarningMessage() {
+    this.$warning.classList.remove('smoothlyShow');
+    this.$warning.classList.add('collapse');
+    this.isWarningShown = false;
+  }
 
-
+  clear() {
+    this.$email.value = '';
+    this.$text.value = '';
+  }
 }

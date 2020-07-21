@@ -1,4 +1,4 @@
-import {AnimationDurationHandler} from "../misc/animation-duration-handler";
+import {AnimationHandler} from "../misc/animation-handler";
 
 export class OrderSlider {
   constructor(props) {
@@ -8,9 +8,9 @@ export class OrderSlider {
     this.$chosenImage = document.querySelector(props.chosenImage);
     this.$input = document.querySelector(props.input);
 
-    this.products= [];
+    this.products = [];
     this.maxIDValueOfProducts = null;
-    this.animationDuration = AnimationDurationHandler.getDuration(':root', '--smoothly-anims-duration');
+    this.animationDuration = AnimationHandler.getDuration(':root', '--smoothly-anims-duration');
     this.qtySliderImages = 3;
     this.init();
   }
@@ -23,14 +23,14 @@ export class OrderSlider {
   }
 
   getData() {
-      fetch('https://api.npoint.io/19d66b0856fad4035fb1')
-          .then(response => response.json())
-          .then(db_products => {
-            this.products = db_products.goods;
-            this.maxIDValueOfProducts = this.products.length - 1;
-            this.defineNumSliderImages();
-          });
-    }
+    fetch('https://api.npoint.io/19d66b0856fad4035fb1')
+        .then(response => response.json())
+        .then(db_products => {
+          this.products = db_products.goods;
+          this.maxIDValueOfProducts = this.products.length - 1;
+          this.defineNumSliderImages();
+        });
+  }
 
   defineNumSliderImages() {
     if (document.documentElement.clientWidth >= 768) {
@@ -71,7 +71,9 @@ export class OrderSlider {
     setTimeout(() => {
       let idOfPrevBlock = this.getElemID(this.$images.firstElementChild) - 1;
 
-      if (idOfPrevBlock < 0) idOfPrevBlock = this.maxIDValueOfProducts;
+      if (idOfPrevBlock < 0) {
+        idOfPrevBlock = this.maxIDValueOfProducts;
+      }
 
       this.$images.lastElementChild.remove();
       this.displayChosenImage(this.$images.lastElementChild);
@@ -79,7 +81,6 @@ export class OrderSlider {
     }, this.animationDuration);
 
     this.dispatchResetProductQty();
-
   }
 
   dispatchResetProductQty() {
@@ -122,7 +123,7 @@ export class OrderSlider {
     const productData = this.products[id];
     document.querySelector('.order__product-info')
         .dispatchEvent(new CustomEvent('get-product-id', {
-          detail: { product: productData }
+          detail: {product: productData}
         }));
   }
 }

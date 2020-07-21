@@ -126,11 +126,11 @@ export class Cart {
                 <img class="cart-product__image" src="${product.img}">
                 <div class="cart-product__name">${product.name}</div>
                 <div class="cart-product__qty">${this.currentProduct.qty}</div>
-                <div class="cart-product__multiply">&#10006;</div>
+                <div class="cart-product__multiply">&#10005;</div>
                 <div class="cart-product__item-price"><span>${product.price}</span>&#8381;</div> 
                 <div class="cart-product__equal">&#61;</div>
                 <div class="cart-product__total-item-price"><span></span>&#8381;</div>
-                <div class="cart-product__delete_item">&#10006;</div>
+                <div class="cart-product__delete_item">&#10005;</div>
          </div>`;
     this.$cartWrapper.insertAdjacentHTML('beforeEnd', productCard);
   }
