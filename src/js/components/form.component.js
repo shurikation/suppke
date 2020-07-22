@@ -46,16 +46,16 @@ export class Form {
   }
 
   sendUserMessage() {
-    fetch('http://httpbin.org/post', {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
+      body: JSON.stringify(this.formData),
       headers: {
-        Authentication: 'message'
-      },
-      body: JSON.stringify(this.formData)
+        "Content-type": "application/json; charset=UTF-8"
+      }
     })
         .then(response => response.json())
-        .then(fakeResponse => {
-          console.log(fakeResponse);
+        .then(json => {
+          console.log(json);
           this.showSuccessMessage();
         });
   }

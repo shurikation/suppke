@@ -30,6 +30,19 @@
   }
 }
 
+.fb__symbol,
+.fb__circle,
+.twitter__symbol,
+.twitter__circle,
+.vk__symbol,
+.vk__circle,
+.insta-color--1,
+.insta-color--2,
+.insta-color--3,
+.insta-color--4 {
+  transition: var(--hover-transition);
+}
+
 .fb:hover .fb__circle {
     fill:#3B5998;
 }
@@ -58,6 +71,7 @@
   width: 35px;
   height: 35px;
 }
+
 .insta--grey {
   stop-color: #949697;
 }
@@ -85,6 +99,7 @@
 .footer__form {
   position: relative;
 }
+
 
 .form__warning {
   top: -1.9em;

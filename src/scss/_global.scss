@@ -3,6 +3,7 @@
 :root {
   box-sizing: border-box;
   --smoothly-anims-duration: 300ms;
+  --hover-transition: 0.7s;
 }
 
 *::after, *::before {
@@ -90,9 +91,11 @@ textarea {
   border-radius: 50px;
   outline: none;
   cursor: pointer;
+  transition: var(--hover-transition);
   &:hover {
     background-color: transparent;
     color: $green;
+    transition: var(--hover-transition);
   }
 }
 

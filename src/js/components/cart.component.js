@@ -167,16 +167,16 @@ export class Cart {
           userOrder.push(item);
         });
 
-    fetch('http://httpbin.org/post', {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
+      body: JSON.stringify(userOrder),
       headers: {
-        Authentication: 'order'
-      },
-      body: JSON.stringify(userOrder)
+        "Content-type": "application/json; charset=UTF-8"
+      }
     })
         .then(response => response.json())
-        .then(fakePost => {
-          console.log(fakePost);
+        .then(json => {
+          console.log(json);
           this.showMessage();
         });
   }
@@ -194,9 +194,9 @@ export class Cart {
   clear() {
     const $deleteItems = document.querySelectorAll('.cart-product__delete_item');
     $deleteItems.forEach(item => {
-          item.parentElement.remove();
-          this.showCartIconValue();
-          this.emptyMessageHandler();
+      item.parentElement.remove();
+      this.showCartIconValue();
+      this.emptyMessageHandler();
     })
   }
 }

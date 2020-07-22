@@ -484,6 +484,7 @@ template {
 :root {
   box-sizing: border-box;
   --smoothly-anims-duration: 300ms;
+  --hover-transition: 0.7s;
 }
 
 *::after, *::before {
@@ -567,10 +568,12 @@ textarea {
   border-radius: 50px;
   outline: none;
   cursor: pointer;
+  transition: var(--hover-transition);
 }
 .button:hover {
   background-color: transparent;
   color: #2ACB35;
+  transition: var(--hover-transition);
 }
 
 .button--white {
@@ -852,6 +855,15 @@ textarea {
   font-weight: 700;
 }
 
+.shop-cart__img {
+  transition: 0.5s;
+  transform: scale(1);
+}
+.shop-cart__img:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+
 .header__toggler-wrapper {
   display: flex;
   justify-content: center;
@@ -941,10 +953,11 @@ textarea {
   color: #062A4D;
   width: calc(100% - 0.8em);
   padding: 20px 0 0 20px;
+  transition: var(--hover-transition);
 }
 .menu__link:hover {
   color: #2ACB35;
-  transition: color 0.3s;
+  transition: var(--hover-transition);
 }
 
 @media (min-width: 576px) {
@@ -1059,7 +1072,7 @@ textarea {
     max-width: 48%;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
   }
 
   .promo__title,
@@ -1077,7 +1090,7 @@ textarea {
   .promo__subtitle {
     animation-duration: 1s;
     animation-timing-function: ease-out;
-    animation-delay: 0.4s;
+    animation-delay: 0.6s;
   }
 
   .promo__buttons {
@@ -1085,9 +1098,8 @@ textarea {
   }
 
   .promo__button-buy {
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-timing-function: ease-out;
-    animation-delay: -0.6s;
   }
 }
 @media (min-width: 1200px) {
@@ -1488,7 +1500,7 @@ textarea {
 }
 
 .gallery__card:hover .card__overlay {
-  transform: translateX(40px);
+  transform: translateX(15px);
   transition: all 1s;
 }
 
@@ -2267,6 +2279,19 @@ _:-ms-fullscreen, :root .slider-control {
 }
 .icon__symbol {
   fill: #949697;
+}
+
+.fb__symbol,
+.fb__circle,
+.twitter__symbol,
+.twitter__circle,
+.vk__symbol,
+.vk__circle,
+.insta-color--1,
+.insta-color--2,
+.insta-color--3,
+.insta-color--4 {
+  transition: var(--hover-transition);
 }
 
 .fb:hover .fb__circle {
