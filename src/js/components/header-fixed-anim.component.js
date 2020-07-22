@@ -1,4 +1,4 @@
-import {ScrollHandler} from "../misc/scroll-handler";
+import {ScrollHandler} from "../handlers/scroll-handler";
 
 export class HeaderFixed {
   constructor({header, startingBlock}) {

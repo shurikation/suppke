@@ -1,4 +1,4 @@
-import {AnimationHandler} from "../misc/animation-handler";
+import {AnimationHandler} from "../handlers/animation-handler";
 
 export class GalleryFilter {
   constructor({varSelector, cssVarName, buttonsParent, card}) {

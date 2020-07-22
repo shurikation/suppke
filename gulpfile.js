@@ -11,3 +11,22 @@ gulp.task('scss', function() {
       }))
       .pipe(gulp.dest('src/css'))
 });
+
+gulp.task('api', function () {
+  return gulp.src('src/youtube.api.js')
+      .pipe(uglify())
+      .pipe(gulp.dest('src/api'))
+});
+
+// gulp.task('js', function() {
+//   return gulp.src([
+//     'node_modules/slick-carousel/slick/slick.js',
+//     'node_modules/wow.js/dist/wow.js'
+//   ])
+//       .pipe(concat('libs.min.js'))
+//       .pipe(uglify())
+//       .pipe(gulp.dest('src/js'))
+//       .pipe(browserSync.reload({stream: true}))
+// });
+
+

@@ -1,7 +1,9 @@
 'use strict';
 
-import {AnimationHandler} from "./js/misc/animation-handler";
-import {ScrollHandler} from "./js/misc/scroll-handler";
+import {AnimationHandler} from "./js/handlers/animation-handler";
+import {ScrollHandler} from "./js/handlers/scroll-handler";
+import {VideoHandler} from "./js/handlers/video-handler";
+
 import {BurgerMenu} from "./js/components/burger-menu.component";
 import {HeaderFixed} from "./js/components/header-fixed-anim.component";
 import {FactCounters} from "./js/components/facts-counter.component";
@@ -126,6 +128,9 @@ const form = new Form({
   button: '.form__button',
   warning: '.form__warning'
 });
+
+const videoHandler = new VideoHandler();
+
 
 
 

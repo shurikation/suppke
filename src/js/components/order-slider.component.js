@@ -1,4 +1,4 @@
-import {AnimationHandler} from "../misc/animation-handler";
+import {AnimationHandler} from "../handlers/animation-handler";
 
 export class OrderSlider {
   constructor(props) {
