@@ -40,6 +40,8 @@
   opacity: 0;
 }
 
+
+
 .gallery__card:hover:before {
   opacity: .8;
   transition: all .5s;
@@ -67,7 +69,7 @@
 
 .card__img {
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 45%;
 }
 
 .card__subtitle {
@@ -98,7 +100,6 @@
   .gallery__cards-wrapper {
     display: flex;
     flex-wrap: wrap;
-    //min-height: 1250px;
   }
 
   .gallery__card {
@@ -107,10 +108,6 @@
 }
 
 @media (min-width: 992px) {
-  .gallery__cards-wrapper {
-    //min-height: 700px;
-  }
-
   .gallery__card {
     max-width: 33.3333%;
     flex: none;
