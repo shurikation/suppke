@@ -1,1 +1,0 @@
-var tag=document.createElement("script");tag.src="https://www.youtube.com/iframe_api";var player,firstScriptTag=document.getElementsByTagName("script")[0];function onYouTubeIframeAPIReady(){player=new YT.Player("player",{width:1280,height:720,videoId:"vBF2sndWtHo"})}firstScriptTag.parentNode.insertBefore(tag,firstScriptTag);
