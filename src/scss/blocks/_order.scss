@@ -140,8 +140,10 @@
   font-size: 20px;
   padding-top: 5px;
   font-weight: 700;
+  background-color: transparent;
+  --webkit-background-color: transparent;
+  --ms-background-color: transparent;
 }
-
 
 .add-to-card-button {
   margin: 15px auto 0 auto;

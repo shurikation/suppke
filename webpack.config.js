@@ -11,15 +11,14 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'src')
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: "./index.html"
     }),
-    new CleanWebpackPlugin()
   ],
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'src/bundle'),
   module: {
     rules: [
       {

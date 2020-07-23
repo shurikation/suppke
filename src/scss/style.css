@@ -1464,6 +1464,11 @@ textarea {
   margin-top: 40px;
 }
 
+.gallery__cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .product-menu {
   padding: 25px 20px;
   background: #fff;
@@ -1488,6 +1493,7 @@ textarea {
 
 .gallery__card {
   position: relative;
+  max-width: 50%;
 }
 .gallery__card:hover .card__overlay {
   opacity: 1;
@@ -1528,7 +1534,7 @@ textarea {
 
 .card__img {
   margin: 0 auto;
-  max-width: 45%;
+  max-width: 70%;
 }
 
 .card__subtitle {
@@ -1555,16 +1561,6 @@ textarea {
   margin-bottom: 30px;
 }
 
-@media (min-width: 768px) {
-  .gallery__cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .gallery__card {
-    max-width: 50%;
-  }
-}
 @media (min-width: 992px) {
   .gallery__card {
     max-width: 33.3333%;
@@ -2074,6 +2070,9 @@ _:-ms-fullscreen, :root .slider-control {
   font-size: 20px;
   padding-top: 5px;
   font-weight: 700;
+  background-color: transparent;
+  --webkit-background-color: transparent;
+  --ms-background-color: transparent;
 }
 
 .add-to-card-button {

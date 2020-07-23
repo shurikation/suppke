@@ -2,6 +2,11 @@
   margin-top: 40px;
 }
 
+.gallery__cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .product-menu {
   padding: 25px 20px;
   background: #fff;
@@ -26,6 +31,7 @@
 
 .gallery__card {
   position: relative;
+  max-width: 50%;
   &:hover .card__overlay {
     opacity: 1;
   }
@@ -39,8 +45,6 @@
   background-color: $green;
   opacity: 0;
 }
-
-
 
 .gallery__card:hover:before {
   opacity: .8;
@@ -69,7 +73,7 @@
 
 .card__img {
   margin: 0 auto;
-  max-width: 45%;
+  max-width: 70%;
 }
 
 .card__subtitle {
@@ -97,14 +101,11 @@
 }
 
 @media (min-width: 768px) {
-  .gallery__cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
 
-  .gallery__card {
-    max-width: 50%;
-  }
+
+  //.gallery__card {
+  //  max-width: 50%;
+  //}
 }
 
 @media (min-width: 992px) {
