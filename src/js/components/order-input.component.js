@@ -1,8 +1,8 @@
 export class OrderInput {
-  constructor(props) {
-    this.$input = document.querySelector(props.input);
-    this.$minus = document.querySelector(props.minus);
-    this.$plus = document.querySelector(props.plus);
+  constructor() {
+    this.$input = document.querySelector('.count-button__input');
+    this.$minus = document.querySelector('.count-button__minus');
+    this.$plus = document.querySelector('.count-button__plus');
 
     this.init();
   }

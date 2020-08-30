@@ -1,14 +1,13 @@
 export class Form {
-  constructor({email, text, button, warning}) {
-    this.$email = document.querySelector(email);
-    this.$text = document.querySelector(text);
-    this.$button = document.querySelector(button);
-    this.$warning = document.querySelector(warning);
+  constructor() {
+    this.$email = document.querySelector('.form__email');
+    this.$text = document.querySelector('.form__text');
+    this.$button = document.querySelector('.form__button');
+    this.$warning = document.querySelector('.form__warning');
     this.$success = document.querySelector('.footer__success-message-wrapper');
-    this.$title = document.querySelector('.form__title');
-
 
     this.isWarningShown = false;
+    this.messageDisplaingTime = 2000;//ms
 
     this.formData = {
       email: '',
@@ -22,9 +21,7 @@ export class Form {
       event.preventDefault();
       this.getInputsValue();
 
-
       if(this.isWarningShown) this.hideWarningMessage();
-
 
       if (this.validateEmail(this.formData.email)) {
         this.sendUserMessage();
@@ -62,21 +59,22 @@ export class Form {
 
   showSuccessMessage() {
     this.clear();
-    this.$success.classList.remove('collapse');
+    this.$success.classList.remove('collapsed');
+
     setTimeout(() => {
-      this.$success.classList.add('collapse');
-    }, 4000);
+      this.$success.classList.add('collapsed');
+    }, this.messageDisplaingTime);
   }
 
   showWarning() {
-    this.$warning.classList.remove('collapse');
+    this.$warning.classList.remove('collapsed');
     this.$warning.classList.add('smoothlyShow');
     this.isWarningShown = true;
   }
 
   hideWarningMessage() {
     this.$warning.classList.remove('smoothlyShow');
-    this.$warning.classList.add('collapse');
+    this.$warning.classList.add('collapsed');
     this.isWarningShown = false;
   }
 

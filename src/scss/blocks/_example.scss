@@ -40,7 +40,11 @@
   font-size: 18px;
   outline: none;
   padding: 0
+}
 
+.changes__button--before:hover,
+.changes__button--after:hover {
+  cursor: pointer;
 }
 
 .changes__slider-container {

@@ -15,6 +15,7 @@ export class AnimationHandler {
     window.onload = () => {
       document.body.classList.add('loaded_hiding');
       this.promoAnimationsHandler();
+
       window.setTimeout(() => {
         document.body.classList.add('loaded');
         document.body.classList.remove('loaded_hiding');
@@ -33,8 +34,4 @@ export class AnimationHandler {
     const value = getComputedStyle(document.querySelector(selector)).getPropertyValue(cssVar);
     return +value.match(/\d/g).join('');
   }
-
-
-
-
 }

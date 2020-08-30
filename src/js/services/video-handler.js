@@ -24,7 +24,7 @@ export class VideoHandler {
   }
 
   videoDisplayHandler() {
-    this.$videoWrapper.classList.remove('collapse');
+    this.$videoWrapper.classList.remove('collapsed');
 
     this.$videoWrapper.addEventListener('click', () => {
         this.hideVideo();
@@ -32,23 +32,8 @@ export class VideoHandler {
   }
 
   hideVideo() {
-    this.$videoWrapper.classList.add('collapse');
-    //player - global varibale from 'youtube.api.js'
-    player.pauseVideo();
+    this.$videoWrapper.classList.add('collapsed');
+    player.pauseVideo();  //var player - глобальная переменная из 'youtube.api.js'
   }
 }
-
-// var tag = document.createElement('script');
-// tag.src = "https://www.youtube.com/iframe_api";
-// var firstScriptTag = document.getElementsByTagName('script')[0];
-// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-// var player;
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player', {
-//     width: 1280,
-//     height: 720,
-//     videoId: 'vBF2sndWtHo'
-//   });
-// }
-
 

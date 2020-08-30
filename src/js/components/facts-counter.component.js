@@ -1,9 +1,35 @@
-import {ScrollHandler} from "../handlers/scroll-handler";
+import {ScrollHandler} from "../services/scroll-handler";
 
 export class FactCounters {
-  constructor({startingBlock, settings}) {
-    this.$counterStartingBlock = document.querySelector(startingBlock);
-    this.settings = settings;
+  constructor() {
+    this.$counterStartingBlock = document.querySelector('.gallery');
+    this.settings = [
+      {
+        $element: document.querySelector('.fact-num--1'),
+        totalValue: 3560,
+        intervalDelay: 15,
+        stepValue: 73,
+      },
+      {
+        $element: document.querySelector('.fact-num--2'),
+        totalValue: 195,
+        intervalDelay: 30,
+        stepValue: 4,
+      },
+      {
+        $element: document.querySelector('.fact-num--3'),
+        totalValue: 455,
+        intervalDelay: 30,
+        stepValue: 9,
+      },
+      {
+        $element: document.querySelector('.fact-num--4'),
+        totalValue: 15,
+        intervalDelay: 110,
+        stepValue: 1,
+      }
+    ];
+
     this.countersWasScrolled = false;
   }
 
@@ -20,9 +46,11 @@ export class FactCounters {
     let counter = 0;
     const integerStepValue = parseInt(stepValue);
     const intermediateValue = totalValue - stepValue;
+
     const ID = setInterval(() => {
       counter += integerStepValue;
       $element.innerText = counter.toString();
+
       if (counter >= intermediateValue) {
         clearInterval(ID);
         this.startSlowCounterPhase($element, totalValue, intervalDelay);
@@ -30,12 +58,12 @@ export class FactCounters {
     }, intervalDelay);
   }
 
-
   startSlowCounterPhase($element, totalValue, intervalDelay, stepValue = 1) {
     let counter = parseInt($element.innerText);
     const ID2 = setInterval(() => {
       counter += stepValue;
       $element.innerText = counter.toString();
+
       if (counter >= totalValue) {
         clearInterval(ID2);
         return false;
@@ -44,36 +72,4 @@ export class FactCounters {
   }
 }
 
-
-
-//Другой компонент
-
-// const $promo = document.querySelector('.promo__img');
-//
-// window.addEventListener("scroll", throttleScroll);
-// let isScrolling = false;
-//
-// function throttleScroll() {
-//   if (isScrolling === false) {
-//     window.requestAnimationFrame(function () {
-//       isHeaderShouldBeShown();
-//       isCountersShouldBeRunning();
-//       isScrolling = false;
-//     });
-//   }
-//   isScrolling = true;
-// }
-//
-// function isHeaderShouldBeShown() {
-//   if (isBlockScrolledDown($promo)) {
-//     $header.classList.add('header--fixed');
-//   } else {
-//     $header.classList.remove('header--fixed');
-//   }
-// }
-//
-// function isBlockScrolledDown($el) {
-//   const elementBoundary = $el.getBoundingClientRect();
-//   const bottom = elementBoundary.bottom;
-//   return (bottom <= 200);
-// }
+export const factsCounter = new FactCounters();

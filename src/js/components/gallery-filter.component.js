@@ -1,10 +1,10 @@
-import {AnimationHandler} from "../handlers/animation-handler";
+import {AnimationHandler} from "../services/animation-handler";
 
 export class GalleryFilter {
-  constructor({varSelector, cssVarName, buttonsParent, card}) {
-    this.animationTime = AnimationHandler.getDuration(varSelector, cssVarName);
-    this.$buttonsParent = document.querySelector(buttonsParent);
-    this.arrayOfCards = Array.from(document.querySelectorAll(card));
+  constructor() {
+    this.animationTime = AnimationHandler.getDuration(':root', '--smoothly-anims-duration');
+    this.$buttonsParent = document.querySelector('.product-menu');
+    this.arrayOfCards = Array.from(document.querySelectorAll('.card'));
 
     this.init();
   }
@@ -15,9 +15,10 @@ export class GalleryFilter {
 
   showCorrectCards(event) {
     const currentFilter = event.target.dataset.type;
+
     if (currentFilter === 'all') {
       this.arrayOfCards.forEach(card => {
-        card.classList.remove('collapse', 'smoothlyHide');
+        card.classList.remove('collapsed', 'smoothlyHide');
         card.classList.add('smoothlyShow');
       });
       return;
@@ -30,14 +31,14 @@ export class GalleryFilter {
       card.classList.remove('smoothlyShow');
       card.classList.add('smoothlyHide');
       card.style.animationDuration = this.animationTime.toString() + 'ms';
-      setTimeout(() => card.classList.add('collapse'), this.animationTime);
+      setTimeout(() => card.classList.add('collapsed'), this.animationTime);
     });
 
     filteredVisibleCards.forEach(card => {
       card.classList.remove('smoothlyHide');
       card.classList.add('smoothlyShow');
       card.style.animationDuration = this.animationTime.toString() + 'ms';
-      setTimeout(() => card.classList.remove('collapse'), this.animationTime);
+      setTimeout(() => card.classList.remove('collapsed'), this.animationTime);
     });
   }
 }

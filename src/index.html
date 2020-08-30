@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='icon' href='images/favicon.png' sizes="32x32" type="image/png">
     <title>Suppke | Магазин спортивного питания</title>
-    <link rel="stylesheet" href="scss/style.css">
 </head>
 <body>
 <div class="preloader">
@@ -190,7 +189,7 @@
             </div>
         </div>
     </section>
-    <div class="video__body-wrapper collapse">
+    <div class="video__body-wrapper collapsed">
         <div class="cross">&#10005;</div>
         <div class="video__body" id="player">
         </div>
@@ -353,7 +352,7 @@
                             <button class="count-button__minus">-</button>
                             <input class="count-button__input" type="number" value="0" disabled>
                             <button class="count-button__plus">+</button>
-                            <p class="count-button__warning warning collapse">Укажите количество товара!</p>
+                            <p class="count-button__warning warning collapsed">Укажите количество товара!</p>
                         </div>
                         <button class="add-to-card-button button">Добавить в корзину</button>
                     </div>
@@ -362,7 +361,7 @@
         </div>
     </section>
     <!-- CART-->
-    <div class="shop-cart overlay-wrapper collapse">
+    <div class="shop-cart overlay-wrapper collapsed">
         <div class="shop-cart__body overlay">
             <div class="shop-cart__info-wrapper">
                 <div class="shop-cart__title">Корзина</div>
@@ -379,7 +378,7 @@
             </div>
             <p class="shop-cart__empty-message">Ваша корзина пуста...</p>
         </div>
-        <div class="shop-cart__success-message success-message overlay collapse">
+        <div class="shop-cart__success-message success-message overlay collapsed">
             <p class="success-message__text">Ваша заявка успешно отправлена!</p>
             <img class="success-message__img" src="images/cart/success.svg" alt="success">
         </div>
@@ -489,7 +488,7 @@
             <div class="footer__form-wrapper" id="contacts">
                 <h4 class="form__title">Напишите нам!</h4>
                 <form class="footer__form" action="#">
-                    <p class="form__warning warning collapse">Укажите ваш e-mail!</p>
+                    <p class="form__warning warning collapsed">Укажите ваш e-mail!</p>
                     <input class="form__email" type="email" placeholder="Ваш email">
                     <textarea class="form__text" name="message" placeholder="Текст сообщения..."></textarea>
                     <button class="button form__button" type="submit">Отправить</button>
@@ -500,13 +499,12 @@
             Copyright&copy;&nbsp;<span>Suppke</span>&nbsp;| Все права защищены
         </p>
     </div>
-    <div class="footer__success-message-wrapper overlay-wrapper collapse">
+    <div class="footer__success-message-wrapper overlay-wrapper collapsed">
         <div class="footer__success-message success-message overlay">
             <p class="success-message__text">Ваше сообщение отправлено!</p>
             <img class="success-message__img" src="images/cart/success.svg" alt="success">
         </div>
     </div>
 </footer>
-<script src="../dist/bundle.js"></script>
 </body>
 </html>

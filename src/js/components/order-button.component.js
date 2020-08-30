@@ -1,12 +1,12 @@
 export class OrderButton {
-  constructor(props) {
-    this.$button = document.querySelector(props.orderButton);
+  constructor() {
+    this.$button = document.querySelector('.add-to-card-button');
 
-    this.$inputQty = document.querySelector(props.inputQty);
-    this.product = props.currentProduct;
-    this.dataID = props.dataID;
-    this.$shopCart = document.querySelector(props.shopCart);
-    this.$warning = document.querySelector(props.warningMessage);
+    this.$inputQty = document.querySelector('.count-button__input');
+    this.product = '.chosen-product__img';
+    this.dataID = 'data-id';
+    this.$shopCart = document.querySelector('.shop-cart');
+    this.$warning = document.querySelector('.count-button__warning');
 
     this.isWarningShown = false;
     this.init();
@@ -32,14 +32,14 @@ export class OrderButton {
   }
 
   showWarningMessage() {
-    this.$warning.classList.remove('collapse');
+    this.$warning.classList.remove('collapsed');
     this.$warning.classList.add('smoothlyShow');
     this.isWarningShown = true;
   }
 
   hideWarningMessage() {
     this.$warning.classList.remove('smoothlyShow');
-    this.$warning.classList.add('collapse');
+    this.$warning.classList.add('collapsed');
     this.isWarningShown = false;
   }
 

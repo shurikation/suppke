@@ -1,8 +1,8 @@
 export class ChangesSlider {
-  constructor({imgBefore, inputRange, inputContainer}) {
-    this.$imageBefore = document.querySelector(imgBefore);
-    this.$inputRange = document.querySelector(inputRange);
-    this.$inputContainer = document.querySelector(inputContainer);
+  constructor() {
+    this.$imageBefore = document.querySelector('.changes__image-wrapper--before');
+    this.$inputRange = document.querySelector('.slider-control');
+    this.$inputContainer = document.querySelector('.changes__slider-container');
 
     this.inputValueCounter = 0;
     this.elemWidthCounter = 100;
@@ -36,15 +36,5 @@ export class ChangesSlider {
 
       this.$inputRange.disabled = 0;
     }, 10);
-}
-
-
-
-
-
-
-
-
-
-
+  }
 }

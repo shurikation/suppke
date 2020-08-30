@@ -1,51 +1,55 @@
 export class Cart {
-  constructor(props) {
-    this.$cart = document.querySelector(props.cart);
-    this.$cartIcon = document.querySelector(props.cartIcon);
-    this.$closeCart = document.querySelector(props.closeCart);
-    this.$cartWrapper = document.querySelector(props.cartWrapper);
-    this.$total = document.querySelector(props.total);
-    this.$cartIconValue = document.querySelector(props.cartIconValue);
-    this.$cartOrderWrapper = document.querySelector(props.cartOrderWrapper);
-    this.$cartButton = document.querySelector(props.cartButton);
-    this.$successMessage = document.querySelector(props.successMessage);
-    this.$cartEmptyMessage = document.querySelector(props.cartEmptyMessage);
-    this.$cartBody = document.querySelector(props.cartBody);
+  constructor() {
+    this.$cart = document.querySelector('.shop-cart');
+    this.$cartIcon = document.querySelector('.shop-cart-icon');
+    this.$closeCart = document.querySelector('.shop-cart__close-cart');
+    this.$cartWrapper = document.querySelector('.shop-cart__products-wrapper');
+    this.$total = document.querySelector('.shop-cart__total-price > span');
+    this.$cartIconValue = document.querySelector('.shop-cart__value');
+    this.$cartOrderWrapper = document.querySelector('.shop-cart__order-wrapper');
+    this.$cartButton = document.querySelector('.shop-cart__button');
+    this.$successMessage = document.querySelector('.shop-cart__success-message');
+    this.$cartEmptyMessage = document.querySelector('.shop-cart__empty-message');
+    this.$cartBody = document.querySelector('.shop-cart__body');
+
     this.products = null;
     this.currentProduct = null;
     this.totalAmount = null;
+
+    this.messageDisplaingTime = 2000;//ms
+
     this.init();
   }
 
   init() {
-    this.open();
-    this.close();
+    this.openHandler();
+    this.closeHandler();
     this.getCurrentProductInfo();
 
-    this.$cartButton.addEventListener('click', () => {
-      this.userOrderHandler();
-    });
-
+    this.$cartButton.addEventListener('click', () => this.userOrderHandler());
   }
 
-  open() {
+  openHandler() {
     this.$cartIcon.addEventListener('click', () => {
-      this.$cart.classList.remove('collapse');
-      this.$cartBody.classList.remove('collapse');
+      this.$cart.classList.remove('collapsed');
+      this.$cartBody.classList.remove('collapsed');
       this.emptyMessageHandler();
     });
   }
 
-  close() {
+  closeHandler() {
     this.$closeCart.addEventListener('click', () => {
-      this.$cart.classList.add('collapse');
+      this.$cart.classList.add('collapsed');
     });
   }
 
   getCurrentProductInfo() {
     this.$cart.addEventListener('get-product-data', (event) => {
       this.currentProduct = event.detail;
-      (!this.products) ? this.fetchData() : this.render();
+
+      (!this.products)
+          ? this.fetchData()
+          : this.render();
     });
   }
 
@@ -78,11 +82,11 @@ export class Cart {
 
   emptyMessageHandler() {
     if (this.$cartWrapper.childElementCount > 0) {
-      this.$cartEmptyMessage.classList.add('collapse');
-      this.$cartOrderWrapper.classList.remove('collapse');
+      this.$cartEmptyMessage.classList.add('collapsed');
+      this.$cartOrderWrapper.classList.remove('collapsed');
     } else if (this.$cartWrapper.childElementCount === 0) {
-      this.$cartEmptyMessage.classList.remove('collapse');
-      this.$cartOrderWrapper.classList.add('collapse');
+      this.$cartEmptyMessage.classList.remove('collapsed');
+      this.$cartOrderWrapper.classList.add('collapsed');
     }
   }
 
@@ -92,7 +96,9 @@ export class Cart {
     $cartProduct.forEach($product => {
       const qty = $product.querySelector('.cart-product__qty').textContent;
       const price = $product.querySelector('.cart-product__item-price > span').textContent;
+
       totalProductPrice = +qty * +price;
+
       const $totalPrice = $product.querySelector('.cart-product__total-item-price > span');
       $totalPrice.innerText = totalProductPrice.toString();
     });
@@ -104,6 +110,7 @@ export class Cart {
     $totalItemPrice.forEach(item => {
       counter += +item.textContent;
     });
+
     this.totalAmount = counter;
     this.$total.innerText = this.totalAmount;
   }
@@ -149,7 +156,6 @@ export class Cart {
         repeated = true;
       }
     });
-
     return !repeated;
   }
 
@@ -183,12 +189,14 @@ export class Cart {
 
   showMessage() {
     this.clear();
-    this.$cartBody.classList.add('collapse');
-    this.$successMessage.classList.remove('collapse');
+
+    this.$cartBody.classList.add('collapsed');
+    this.$successMessage.classList.remove('collapsed');
+
     setTimeout(() => {
-      this.$successMessage.classList.add('collapse');
-      this.$cart.classList.add('collapse');
-    }, 4000);
+      this.$successMessage.classList.add('collapsed');
+      this.$cart.classList.add('collapsed');
+    }, this.messageDisplaingTime);
   }
 
   clear() {

@@ -679,7 +679,7 @@ textarea {
   text-align: center;
 }
 
-.collapsed {
+.collapse {
   display: none !important;
 }
 

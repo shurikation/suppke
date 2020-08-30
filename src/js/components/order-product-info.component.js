@@ -1,10 +1,10 @@
 export class OrderProductInfo {
-  constructor({product, title, price, weight, description}) {
-    this.$product = document.querySelector(product);
-    this.$title = document.querySelector(title);
-    this.$price = document.querySelector(price);
-    this.$description = document.querySelector(description);
-    this.$weight = document.querySelector(weight);
+  constructor() {
+    this.$product = document.querySelector('.order__product-info');
+    this.$title = document.querySelector('.product-info__title');
+    this.$price = document.querySelector('.product-info__price > span');
+    this.$description = document.querySelector('.product-info__description');
+    this.$weight = document.querySelector('.product-info__weight > span');
     this.init();
   }
 

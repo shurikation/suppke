@@ -1,10 +1,10 @@
-import {headerFixed} from "../../index";
-import {factsCounter} from "../../index";
-
+import {header} from "../components/header.component";
+import {factsCounter} from "../components/facts-counter.component";
 
 export class ScrollHandler {
   constructor() {
     this.isScrolling = false;
+    this.indentFromElement = 200;//px
     this.init();
   }
 
@@ -12,11 +12,11 @@ export class ScrollHandler {
     window.addEventListener("scroll", this.throttleScroll.bind(this));
   }
 
-  //to call 60 times in second / to avoid chatty of the scroll event
+  // чтобы вызываеть не более 60 раз в секунду - для избежания излишнего кол-ва вызовов
   throttleScroll() {
     if (this.isScrolling === false) {
       window.requestAnimationFrame(() => {
-        headerFixed.isHeaderShouldBeShown();
+        header.isHeaderShouldBeShown();
         factsCounter.isCountersShouldBeRunning();
 
         this.isScrolling = false;

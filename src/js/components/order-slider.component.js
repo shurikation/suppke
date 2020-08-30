@@ -1,17 +1,18 @@
-import {AnimationHandler} from "../handlers/animation-handler";
+import {AnimationHandler} from "../services/animation-handler";
 
 export class OrderSlider {
-  constructor(props) {
-    this.$arrowLeft = document.querySelector(props.arrowLeft);
-    this.$arrowRight = document.querySelector(props.arrowRight);
-    this.$images = document.querySelector(props.images);
-    this.$chosenImage = document.querySelector(props.chosenImage);
-    this.$input = document.querySelector(props.input);
+  constructor() {
+    this.$arrowLeft = document.querySelector('.product-slider__arrow--left');
+    this.$arrowRight = document.querySelector('.product-slider__arrow--right');
+    this.$images = document.querySelector('.product-slider__images');
+    this.$chosenImage = document.querySelector('.product-slider__chosen-product');
+    this.$input = document.querySelector('.count-button__input');
 
     this.products = [];
     this.maxIDValueOfProducts = null;
     this.animationDuration = AnimationHandler.getDuration(':root', '--smoothly-anims-duration');
     this.qtySliderImages = 3;
+    this.screenWidthResolution = 768; //px
     this.init();
   }
 
@@ -33,7 +34,7 @@ export class OrderSlider {
   }
 
   defineNumSliderImages() {
-    if (document.documentElement.clientWidth >= 768) {
+    if (document.documentElement.clientWidth >= this.screenWidthResolution) {
       this.qtySliderImages = 4;
     }
     this.render();
@@ -52,9 +53,7 @@ export class OrderSlider {
     setTimeout(() => {
       let idOfNextBlock = this.getElemID(this.$images.lastElementChild) + 1;
 
-      if (idOfNextBlock > this.maxIDValueOfProducts) {
-        idOfNextBlock = 0;
-      }
+      if (idOfNextBlock > this.maxIDValueOfProducts) idOfNextBlock = 0;
 
       this.$images.firstElementChild.remove();
       this.displayChosenImage(this.$images.firstElementChild);
@@ -62,7 +61,6 @@ export class OrderSlider {
     }, this.animationDuration);
 
     this.dispatchResetProductQty();
-
   }
 
   rightArrowClickHandler() {
@@ -71,9 +69,7 @@ export class OrderSlider {
     setTimeout(() => {
       let idOfPrevBlock = this.getElemID(this.$images.firstElementChild) - 1;
 
-      if (idOfPrevBlock < 0) {
-        idOfPrevBlock = this.maxIDValueOfProducts;
-      }
+      if (idOfPrevBlock < 0) idOfPrevBlock = this.maxIDValueOfProducts;
 
       this.$images.lastElementChild.remove();
       this.displayChosenImage(this.$images.lastElementChild);
@@ -91,17 +87,17 @@ export class OrderSlider {
 
   imageClickHandler(event) {
     if (event.target.tagName !== 'IMG') return false;
+
     this.displayChosenImage(event.target);
     this.dispatchResetProductQty();
   }
 
   displayChosenImage($image) {
-    if (this.$chosenImage.childElementCount > 0) {
-      this.$chosenImage.firstElementChild.remove();
-    }
+    if (this.$chosenImage.childElementCount > 0) this.$chosenImage.firstElementChild.remove();
 
     const $imageClone = $image.cloneNode(true);
     $imageClone.className = 'chosen-product__img smoothlyShow';
+
     this.$chosenImage.insertAdjacentElement('afterBegin', $imageClone);
     this.dispatchProductData($image.getAttribute('data-id'));
   }

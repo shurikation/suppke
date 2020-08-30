@@ -41,9 +41,11 @@
 .product-slider__arrow--left {
   width: 25px;
   height: 29px;
-  &:hover {
-    cursor: pointer;
-  }
+}
+
+.product-slider__arrow--right:hover,
+.product-slider__arrow--left:hover {
+  cursor: pointer;
 }
 
 .order__product-info {
